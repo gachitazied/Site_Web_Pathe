@@ -229,6 +229,7 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
+  
 }
 ::selection {
   background: var(--primary-color);
@@ -267,7 +268,7 @@ h5, h6 {
   letter-spacing: 1px;
 }
 h1, .h1 {
-  font-size: 3em;
+  font-size: 1em;
   line-height: 1.4;
 }
 h2, .h2 {
@@ -922,8 +923,8 @@ img.small-image {
     object-fit: cover;
 }
 img.single-image {
-    width: 100%;
-    height: 810px;
+    width: 700;
+    height: 364px;
     object-fit: cover;
 }
 img.brand-image {
@@ -1989,18 +1990,18 @@ blockquote cite {
     width: 100%;
 }
 .product-item .cart-concern {
-    background: var(--light-color);
-    width: 80%;
-    text-align: center;
-    margin: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 300px;
-    z-index: 9;
-    transition: 0.5s ease-out;
-    padding: 20px 30px;
-    opacity: 0;
+  background: var(--light-color);
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 300px;
+  z-index: 9;
+  transition: 0.5s ease-out;
+  padding: 20px 30px;
+  opacity: 0;
 }
 .product-item:hover .cart-concern {
     bottom: 280px;
@@ -2370,6 +2371,7 @@ a.blog-categories:hover{
   }
   #latest-blog h3.post-title {
       font-size: 1.5em;
+
   }
 }
 

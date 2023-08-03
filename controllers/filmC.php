@@ -3,7 +3,7 @@
     include '../models/film.php';
     class filmsC{
         function afficherfilm(){
-            $sql="SELECT * FROM films";
+            $sql="SELECT * FROM films ";
             $db = config::getConnexion();
             try{
                 $liste = $db->query($sql);
@@ -14,6 +14,23 @@
             }
         }
     
+        function afficherAboutfilm($id_film){
+            $sql = "SELECT * FROM films WHERE id_film = :id_film";
+            $db = config::getConnexion();
+            
+            try {
+                $stmt = $db->prepare($sql);
+                $stmt->bindParam(':id_film', $id_film, PDO::PARAM_INT);
+                $stmt->execute();
+                $liste = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $liste;
+            } catch (Exception $e) {
+                die('Erreur: ' . $e->getMessage());
+            }
+        }
+        
+
+
         function supprimerfilm($id_film){
             $sql=" DELETE FROM films WHERE id_film=:id_film";
             $db = config::getConnexion();
@@ -93,11 +110,6 @@
     }catch (Exception $e){
         $e->getMessage();}
     }
-
-
-
-
-
     function joincinema($id_cinema){
         $sql=("SELECT * FROM films INNER JOIN cinemas on films.id_cinema = cinemas.id_cinema WHERE cinemas.id_cinema = $id_cinema");
         $db = config::getConnexion();
@@ -112,8 +124,4 @@
 
 
     }
-        
-
-
-
     ?>

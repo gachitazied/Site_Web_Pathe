@@ -119,53 +119,15 @@
                   <div id="main-nav" class="stellarnav d-flex justify-content-end right">
                     <ul class="menu-list">
 
-                      <li class="menu-item has-sub">
-                        <a href="index.php" class="item-anchor d-flex align-item-center" data-effect="Home">Home<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="index.php" class="item-anchor">Home</a></li>
-                          <li><a href="home2.php" class="item-anchor">Home v2<span class="text-primary"> (PRO)</span></a></li>
-                        </ul>
+                      <li >
+                        <a href="index.php" class="item-anchor" data-effect="Home">Films<i class=""></i></a>
+
+                      </li>
+                      <li >
+                        <a href="blog.php" class="item-anchor" data-effect="Blog">Cinémas<i ></i></a>
                       </li>
 
-                      <li><a href="about.php" class="item-anchor" data-effect="About">About</a></li>
-
-                      <li class="menu-item has-sub">
-                        <a href="shop.php" class="item-anchor d-flex align-item-center" data-effect="Shop">Shop<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="shop.php" class="item-anchor">Shop</a></li>
-                          <li><a href="shop-slider.php" class="item-anchor">Shop slider<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="shop-grid.php" class="item-anchor">Shop grid<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="shop-list.php" class="item-anchor">Shop list<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="single-product.php" class="item-anchor">Single product<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="cart.php" class="item-anchor">Cart<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="wishlist.php" class="item-anchor">Wishlist<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="checkout.php" class="item-anchor">Checkout<span class="text-primary"> (PRO)</span></a></li>
-                        </ul>
-                      </li>
-
-                      <li class="menu-item has-sub">
-                        <a href="#" class="item-anchor d-flex align-item-center" data-effect="Pages">Pages<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="coming-soon.php" class="item-anchor">Coming soon<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="login.php" class="item-anchor">Login<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="faqs.php" class="item-anchor">FAQs<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="styles.php" class="item-anchor">Styles</a></li>
-                          <li><a href="thank-you.php" class="item-anchor">Thankyou</a></li>
-                          <li><a href="error.php" class="item-anchor">Error page<span class="text-primary"> (PRO)</span></a></li>
-                        </ul>
-                      </li>
-
-                      <li class="menu-item has-sub">
-                        <a href="blog.php" class="item-anchor d-flex align-item-center" data-effect="Blog">Blog<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="blog.php" class="item-anchor">Blog</a></li>
-                          <li><a href="blog-sidebar.php" class="item-anchor">Blog with sidebar<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="blog-masonry.php" class="item-anchor">Blog masonry<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="single-post.php" class="item-anchor">Single post</a></li>
-                        </ul>
-                      </li>
-
-                      <li><a href="contact.php" class="item-anchor active" data-effect="Contact">Contact</a></li>
+                      <li><a href="contact.php" class="item-anchor" data-effect="Contact">Contact</a></li>
 
                     </ul>
                   </div>
@@ -278,107 +240,14 @@
       </div>
     </section>
 
-    <section id="brand-collection" class="padding-medium bg-light-grey">
-      <div class="container">
-        <div class="d-flex flex-wrap justify-content-between">
-          <img src="images/brand1.png" alt="phone" class="brand-image">
-          <img src="images/brand2.png" alt="phone" class="brand-image">
-          <img src="images/brand3.png" alt="phone" class="brand-image">
-          <img src="images/brand4.png" alt="phone" class="brand-image">
-          <img src="images/brand5.png" alt="phone" class="brand-image">
-        </div>
-      </div>
-    </section>
+    
+   
 
-    <section id="instagram" class="padding-large">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Follow our instagram</h2>
-        </div>
-        <p>Our official Instagram account <a href="#">@ultras</a> or <a href="#">#ultras_clothing</a>
-        </p>
-        <div class="row d-flex flex-wrap justify-content-between">
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <figure class="zoom-effect">
-              <img src="images/insta-image1.jpg" alt="instagram" class="insta-image">
-              <i class="icon icon-instagram"></i>
-            </figure>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <figure class="zoom-effect">
-              <img src="images/insta-image2.jpg" alt="instagram" class="insta-image">
-              <i class="icon icon-instagram"></i>
-            </figure>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <figure class="zoom-effect">
-              <img src="images/insta-image3.jpg" alt="instagram" class="insta-image">
-              <i class="icon icon-instagram"></i>
-            </figure>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <figure class="zoom-effect">
-              <img src="images/insta-image4.jpg" alt="instagram" class="insta-image">
-              <i class="icon icon-instagram"></i>
-            </figure>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <figure class="zoom-effect">
-              <img src="images/insta-image5.jpg" alt="instagram" class="insta-image">
-              <i class="icon icon-instagram"></i>
-            </figure>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <figure class="zoom-effect">
-              <img src="images/insta-image6.jpg" alt="instagram" class="insta-image">
-              <i class="icon icon-instagram"></i>
-            </figure>
-          </div>
-        </div>          
-      </div>
-    </section>
+   
+    <hr>
 
-    <section id="shipping-information">
-      <hr>
-      <div class="container">
-        <div class="row d-flex flex-wrap align-items-center justify-content-between">
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box">
-              <i class="icon icon-truck"></i>
-              <h4 class="block-title">
-                <strong>Free shipping</strong> Over $200
-              </h4>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box">
-              <i class="icon icon-return"></i>
-              <h4 class="block-title">
-                <strong>Money back</strong> Return within 7 days
-              </h4>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box">
-              <i class="icon icon-tags1"></i>
-              <h4 class="block-title">
-                <strong>Buy 4 get 5th</strong> 50% off
-              </h4>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box">
-              <i class="icon icon-help_outline"></i>
-              <h4 class="block-title">
-                <strong>Any questions?</strong> experts are ready
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr>
-    </section>
 
+    <hr>
     <footer id="footer">
       <div class="container">
         <div class="footer-menu-list">
@@ -476,27 +345,9 @@
           </div>
         </div>
       </div>
-      <hr>
+      
     </footer>
 
-    <div id="footer-bottom">
-      <div class="container">
-        <div class="d-flex align-items-center flex-wrap justify-content-between">
-          <div class="copyright">
-            <p>Freebies by <a href="https://templatesjungle.com/">Templates Jungle</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
-            </p>
-          </div>
-          <div class="payment-method">
-            <p>Payment options :</p>
-            <div class="card-wrap">
-              <img src="images/visa-icon.jpg" alt="visa">
-              <img src="images/mastercard.png" alt="mastercard">
-              <img src="images/american-express.jpg" alt="american-express">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/plugins.js"></script>

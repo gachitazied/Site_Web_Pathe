@@ -196,6 +196,7 @@ $listeUserC = $cinemas->affichercinema();
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID cinema</th>
+                                        <th scope="col">img cinema</th>
                                         <th scope="col">Nom cinema</th>
                                         <th scope="col">Lieu cinema</th>
                                        
@@ -208,6 +209,7 @@ $listeUserC = $cinemas->affichercinema();
                                     <tr>
                                        
                                         <td><?php echo $cinemas['id_cinema'];?> </td>
+                                        <td><?php echo $cinemas['img_cinema'];?></td>
                                         <td><?php echo $cinemas['nom_cinema'];?></td>
                                         <td><?php echo $cinemas['lieu_cinema'];?></td>
                                        <td> <a href="DeleteCinema.php?id_cinema=<?php echo $cinemas['id_cinema']; ?>" class="btn">Delete</a></td>
