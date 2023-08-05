@@ -23,58 +23,17 @@
     <script src="js/modernizr.js"></script>
   </head>
   <body>
-
-    <div class="preloader-wrapper">
-      <div class="preloader">
-      </div>
-    </div>
-
-    <div class="search-popup">
-      <div class="search-popup-container">
-
-        <form role="search" method="get" class="search-form" action="">
-          <input type="search" id="search-form" class="search-field" placeholder="Type and press enter" value="" name="s" />
-          <button type="submit" class="search-submit"><a href="#"><i class="icon icon-search"></i></a></button>
-        </form>
-
-        <h5 class="cat-list-title">Browse Categories</h5>
-        
-        <ul class="cat-list">
-          <li class="cat-list-item">
-            <a href="shop.php" title="Men Jackets">Men Jackets</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Fashion">Fashion</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Casual Wears">Casual Wears</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Women">Women</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Trending">Trending</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Hoodie">Hoodie</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Kids">Kids</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <header id="header">
+  <header id="header">
       <div id="header-wrap">
         <nav class="secondary-nav border-bottom">
           <div class="container">
             <div class="row d-flex align-items-center">
               <div class="col-md-4 header-contact">
-                <p>Let's talk! <strong>+57 444 11 00 35</strong>
+                <p><strong></strong>
                 </p>
               </div>
               <div class="col-md-4 shipping-purchase text-center">
-                <p>Free shipping on a purchase value of $200</p>
+                <p></p>
               </div>
               <div class="col-md-4 col-sm-12 user-items">
                 <ul class="d-flex justify-content-end list-unstyled">
@@ -83,21 +42,7 @@
                       <i class="icon icon-user"></i>
                     </a>
                   </li>
-                  <li>
-                    <a href="cart.php">
-                      <i class="icon icon-shopping-cart"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="wishlist.php">
-                      <i class="icon icon-heart"></i>
-                    </a>
-                  </li>
-                  <li class="user-items search-item pe-3">
-                    <a href="#" class="search-button">
-                      <i class="icon icon-search"></i>
-                    </a>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
@@ -119,12 +64,14 @@
                   <div id="main-nav" class="stellarnav d-flex justify-content-end right">
                     <ul class="menu-list">
 
-                      <li >
-                        <a href="index.php" class="item-anchor" data-effect="Home">Films<i class=""></i></a>
-
+                      <li class="menu-item has-sub">
+                        <a href="index.php" class="item-anchor d-flex align-item-center" data-effect="Home">Films<i class=""></i></a>
+               
                       </li>
-                      <li >
+
+                      <li class="menu-item has-sub">
                         <a href="blog.php" class="item-anchor" data-effect="Blog">Cinémas<i ></i></a>
+            
                       </li>
 
                       <li><a href="contact.php" class="item-anchor" data-effect="Contact">Contact</a></li>
@@ -140,107 +87,103 @@
       </div>
     </header>
 
-    <section class="site-banner jarallax padding-large" style="background: url(images/hero-image.jpg) no-repeat; background-position: top;">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="page-title">Contact us</h1>
-            <div class="breadcrumbs">
-              <span class="item">
-                <a href="index.php">Home /</a>
-              </span>
-              <span class="item">Contact us</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
+   
+    <hr>
+
+
+    <hr>
     <section class="contact-information padding-large">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <div class="section-header">
-              <h2 class="section-title">Get in touch</h2>
+              <h2 class="section-title">Info</h2>
             </div>
             <div class="contact-detail">
               <div class="detail-list">
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Nos Articles | FAQ sont là pour vous aider. N'hésitez pas à les consulter pour trouver rapidement la réponse à votre question.</p>
                 <ul class="list-unstyled list-icon">
                   <li>
-                    <a href="#"><i class="icon icon-phone"></i>+1650-243-0000</a>
+                    <a href="#"><i class="icon icon-phone"></i>+216 75 000 980</a>
                   </li>
                   <li>
-                    <a href="mailto:info@yourcompany.com"><i class="icon icon-mail"></i>info@yourcompany.com</a>
+                    <a href="mailto:info@yourcompany.com"><i class="icon icon-mail"></i>cinema@cinema.com</a>
                   </li>
-                  <li>
-                    <a href="#"><i class="icon icon-map-pin"></i>North Melbourne VIC 3051, Australia</a>
-                  </li>
+              
                 </ul>
               </div>
-              <div class="social-links">
-                <h3>Social Links</h3>
-                <ul class="d-flex list-unstyled">
-                  <li><a href="#" class="icon icon-facebook"></a></li>
-                  <li><a href="#" class="icon icon-twitter"></a></li>
-                  <li><a href="#" class="icon icon-instagram"></a></li>
-                  <li><a href="#" class="icon icon-youtube-play"></a></li>
-                </ul>
-              </div>
+  
             </div>
           </div>
           <div class="col-md-6">
             <div class="contact-information">
               <div class="section-header">
-                <h2 class="section-title">Send us a message</h2>
+                <h2 class="section-title">Contact</h2>
               </div>
-              <form name="contactform" action="contact.php" method="post" class="contact-form">
+
+              <form name="contactform" action="Addcontact.php"  id="myForm" method="post" class="contact-form">
                 <div class="form-item">
-                  <input type="text" minlength="2" name="name" placeholder="Name" class="u-full-width bg-light" required>
-                  <input type="email" name="email" placeholder="E-mail" class="u-full-width bg-light" required>
-                  <textarea class="u-full-width bg-light" name="message" placeholder="Message" style="height: 180px;" required></textarea>
+
+                  <input  type="text" id="nom" minlength="2" name="register-nom_contact" placeholder="Nom*" class="u-full-width bg-light" >
+                  <span id="errorname"></span>
+
+                  <input type="text" id="prenom" minlength="2" name="register-prenom_contact" placeholder="Prénom*" class="u-full-width bg-light" >
+                  <span id="errorprenom"></span>
+
+                  <input type="email" id="mail" name="register-email_contact" placeholder="E-mail*" class="u-full-width bg-light" >
+                  <span id="erroremail"></span>
+                  
+                  <textarea class="u-full-width bg-light" id="mess" name="register-message_contact" placeholder="Message" style="height: 180px;" ></textarea>
+                  <span id="errormessage"></span>
                 </div>
-                <label>
-                  <input type="checkbox" required>
-                  <span class="label-body">I agree all the <a href="#">terms and conditions</a>
-                  </span>
-                </label>
-                <button type="submit" name="submit" class="btn btn-dark btn-full btn-medium">Submit</button>
+
+                <button type="submit" name="submit" class="btn btn-dark btn-full btn-medium">Envoyer</button>
               </form>
+
+
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="google-map">
-      <div class="mapouter">
-        <div class="gmap_canvas">
-          <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-          <a href="https://getasearch.com/fmovies"></a>
-          <br>
-          <style>
-            .mapouter {
-              position: relative;
-              text-align: right;
-              height: 500px;
-              width: 100%;
-            }
-          </style>
-          <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
-          <style>
-            .gmap_canvas {
-              overflow: hidden;
-              background: none !important;
-              height: 500px;
-              width: 100%;
-            }
-          </style>
-        </div>
-      </div>
-    </section>
+    <script>
+   let myForm = document.getElementById('myForm');
 
-    
+myForm.addEventListener('submit', function(e) {
+  let mynom = document.getElementById('nom');
+  let myprenom = document.getElementById('prenom');
+  let mymail = document.getElementById('mail');
+  let mymsg = document.getElementById('mess');
+
+
+  if (mynom.value == '') {
+    let error = document.getElementById('errorname');
+    error.innerHTML = "Le champs est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+  if (myprenom.value == '') {
+    let error = document.getElementById('errorprenom');
+    error.innerHTML = "Le champs  est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+  if (mymail.value == '') {
+    let error = document.getElementById('erroremail');
+    error.innerHTML = "Le champs est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+  if (mymsg.value == '') {
+    let error = document.getElementById('errormessage');
+    error.innerHTML = "Le champs est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+})
+              </script>
    
 
    

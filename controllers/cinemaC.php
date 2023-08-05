@@ -45,7 +45,7 @@ class cinemasC {
 }
 
     }
-function modifiercinema($id_cinema,$cinemas){
+function modifiercinema($cinemas,$id_cinema){
        try{
         $db = config::getConnexion();
 $query = $db->prepare('UPDATE cinemas SET  img_cinema = :img_cinema , nom_cinema = :nom_cinema, lieu_cinema = :lieu_cinema   WHERE id_cinema = :id_cinema');

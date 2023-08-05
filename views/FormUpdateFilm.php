@@ -74,8 +74,8 @@ $films = $filmsC->recupererfilm($id_film,$id_cinema);
         <!-- Spinner End -->
 
 
-        <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
+               <!-- Sidebar Start -->
+               <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.php" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Ciné Paradis</h3>
@@ -85,35 +85,16 @@ $films = $filmsC->recupererfilm($id_film,$id_cinema);
                         <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
-                        <span>Admin</span>
-                    </div>
+       
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.php" class="dropdown-item">Buttons</a>
-                            <a href="typography.php" class="dropdown-item">Typography</a>
-                            <a href="element.php" class="dropdown-item">Other Elements</a>
-                        </div>
-                    </div>
-                    <a href="widget.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+          
+                   
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href="FormUpdated.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Updates</a>
+            
                     <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.php" class="dropdown-item">Sign In</a>
-                            <a href="signup.php" class="dropdown-item">Sign Up</a>
-                            <a href="404.php" class="dropdown-item">404 Error</a>
-                            <a href="blank.php" class="dropdown-item">Blank Page</a>
-                        </div>
-                    </div>
+            
+                   
                 </div>
             </nav>
         </div>
@@ -265,22 +246,7 @@ $films = $filmsC->recupererfilm($id_film,$id_cinema);
             <!-- Form End -->
 
 
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://phpcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://phpcodex.com">php Codex</a>
-                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
+
         </div>
         <!-- Content End -->
 
@@ -304,4 +270,4 @@ $films = $filmsC->recupererfilm($id_film,$id_cinema);
     <script src="js/main.js"></script>
 </body>
 
-</php>
+</html>

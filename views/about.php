@@ -1,9 +1,19 @@
 <?php
 include '../controllers/filmC.php';
+include '../controllers/dateC.php';
 $films = new filmsC();
+$datesC = new datesC();
 $id_film = $_GET["id_film"];
+
+$listdateC = $datesC->joinfilm($id_film);
 $listeUserC = $films->afficherAboutfilm($id_film);
 ?>
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,57 +41,17 @@ $listeUserC = $films->afficherAboutfilm($id_film);
   </head>
   <body>
 
-    <div class="preloader-wrapper">
-      <div class="preloader">
-      </div>
-    </div>
-
-    <div class="search-popup">
-      <div class="search-popup-container">
-
-        <form role="search" method="get" class="search-form" action="">
-          <input type="search" id="search-form" class="search-field" placeholder="Type and press enter" value="" name="s" />
-          <button type="submit" class="search-submit"><a href="#"><i class="icon icon-search"></i></a></button>
-        </form>
-
-        <h5 class="cat-list-title">Browse Categories</h5>
-        
-        <ul class="cat-list">
-          <li class="cat-list-item">
-            <a href="shop.php" title="Men Jackets">Men Jackets</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Fashion">Fashion</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Casual Wears">Casual Wears</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Women">Women</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Trending">Trending</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Hoodie">Hoodie</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Kids">Kids</a>
-          </li>
-        </ul>
-      </div>
-    </div>
     <header id="header">
       <div id="header-wrap">
         <nav class="secondary-nav border-bottom">
           <div class="container">
             <div class="row d-flex align-items-center">
               <div class="col-md-4 header-contact">
-                <p>Let's talk! <strong>+57 444 11 00 35</strong>
+                <p><strong></strong>
                 </p>
               </div>
               <div class="col-md-4 shipping-purchase text-center">
-                <p>Free shipping on a purchase value of $200</p>
+                <p></p>
               </div>
               <div class="col-md-4 col-sm-12 user-items">
                 <ul class="d-flex justify-content-end list-unstyled">
@@ -90,21 +60,7 @@ $listeUserC = $films->afficherAboutfilm($id_film);
                       <i class="icon icon-user"></i>
                     </a>
                   </li>
-                  <li>
-                    <a href="cart.php">
-                      <i class="icon icon-shopping-cart"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="wishlist.php">
-                      <i class="icon icon-heart"></i>
-                    </a>
-                  </li>
-                  <li class="user-items search-item pe-3">
-                    <a href="#" class="search-button">
-                      <i class="icon icon-search"></i>
-                    </a>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
@@ -127,49 +83,13 @@ $listeUserC = $films->afficherAboutfilm($id_film);
                     <ul class="menu-list">
 
                       <li class="menu-item has-sub">
-                        <a href="index.php" class="item-anchor d-flex align-item-center" data-effect="Home">Home<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="index.php" class="item-anchor">Home</a></li>
-                          <li><a href="home2.php" class="item-anchor">Home v2<span class="text-primary"> (PRO)</span></a></li>
-                        </ul>
-                      </li>
-
-                      <li><a href="about.php" class="item-anchor active" data-effect="About">About</a></li>
-
-                      <li class="menu-item has-sub">
-                        <a href="shop.php" class="item-anchor d-flex align-item-center" data-effect="Shop">Shop<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="shop.php" class="item-anchor">Shop</a></li>
-                          <li><a href="shop-slider.php" class="item-anchor">Shop slider<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="shop-grid.php" class="item-anchor">Shop grid<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="shop-list.php" class="item-anchor">Shop list<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="single-product.php" class="item-anchor">Single product<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="cart.php" class="item-anchor">Cart<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="wishlist.php" class="item-anchor">Wishlist<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="checkout.php" class="item-anchor">Checkout<span class="text-primary"> (PRO)</span></a></li>
-                        </ul>
+                        <a href="index.php" class="item-anchor d-flex align-item-center" data-effect="Home">Films<i class=""></i></a>
+               
                       </li>
 
                       <li class="menu-item has-sub">
-                        <a href="#" class="item-anchor d-flex align-item-center" data-effect="Pages">Pages<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="coming-soon.php" class="item-anchor">Coming soon<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="login.php" class="item-anchor">Login<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="faqs.php" class="item-anchor">FAQs<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="styles.php" class="item-anchor">Styles</a></li>
-                          <li><a href="thank-you.php" class="item-anchor">Thankyou</a></li>
-                          <li><a href="error.php" class="item-anchor">Error page<span class="text-primary"> (PRO)</span></a></li>
-                        </ul>
-                      </li>
-
-                      <li class="menu-item has-sub">
-                        <a href="blog.php" class="item-anchor d-flex align-item-center" data-effect="Blog">Blog<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="blog.php" class="item-anchor">Blog</a></li>
-                          <li><a href="blog-sidebar.php" class="item-anchor">Blog with sidebar<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="blog-masonry.php" class="item-anchor">Blog masonry<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="single-post.php" class="item-anchor">Single post</a></li>
-                        </ul>
+                        <a href="blog.php" class="item-anchor" data-effect="Blog">Cinémas<i ></i></a>
+            
                       </li>
 
                       <li><a href="contact.php" class="item-anchor" data-effect="Contact">Contact</a></li>
@@ -185,11 +105,14 @@ $listeUserC = $films->afficherAboutfilm($id_film);
       </div>
     </header>
 
-    <section class="site-banner jarallax min-height300 padding-large" style="background: url(images/hero-image.jpg) no-repeat;">
+    <section class="site-banner jarallax min-height300 padding-large" style="background: url(images/pop.jpg) no-repeat;">
+    <?php
+                         foreach ($listeUserC as $films) {
+                          ?>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1 class="page-title">About us</h1>
+            <h1 class="page-title"><?php echo $films['nom_film'];?></h1>
             <div class="breadcrumbs">
               <span class="item">
                 <a href="index.php">Home /</a>
@@ -199,47 +122,17 @@ $listeUserC = $films->afficherAboutfilm($id_film);
           </div>
         </div>
       </div>
+      <?php
+                            }
+                            ?>
     </section>
 
-    <section id="shipping-information" class="padding-large">
-      <div class="container">
-        <div class="row d-flex flex-wrap align-items-center justify-content-between">
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box">
-              <i class="icon icon-truck"></i>
-              <h4 class="block-title">
-                <strong>Free shipping</strong> Over $200
-              </h4>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box">
-              <i class="icon icon-return"></i>
-              <h4 class="block-title">
-                <strong>Money back</strong> Return within 7 days
-              </h4>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box">
-              <i class="icon icon-tags1"></i>
-              <h4 class="block-title">
-                <strong>Buy 4 get 5th</strong> 50% off
-              </h4>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box">
-              <i class="icon icon-help_outline"></i>
-              <h4 class="block-title">
-                <strong>Any questions?</strong> experts are ready
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  
 
+    <hr>
+
+
+<hr>
     <section id="about-us">
     <?php
                          foreach ($listeUserC as $films) {
@@ -258,10 +151,17 @@ $listeUserC = $films->afficherAboutfilm($id_film);
                 <p> Description :<?php echo $films['desc_film'];?></p>
                 <p> Genre   :<?php echo $films['genre_film'];?></p>
                 <p> Salle   :<?php echo $films['salle_film'];?></p>
+
+                <?php
+                         foreach ($listdateC as $dates) {
+                          ?>
                 <div class="btn-wrap">
-                  <a href="shop.php" class="btn btn-dark btn-medium d-flex align-items-center" tabindex="0">Shop our store<i class="icon icon-arrow-io"></i>
+                  <a href="shop.php" class="btn btn-dark btn-medium d-flex align-items-center" tabindex="0"><?php echo $dates['date_date'];?> / <?php echo $dates['heure_date'];?> <i class="icon icon-arrow-io"></i>
                   </a>
                 </div>
+                      <?php
+                            }
+                            ?>
               </div>
             </div>
           </div>
@@ -270,6 +170,8 @@ $listeUserC = $films->afficherAboutfilm($id_film);
       <?php
                             }
                             ?>
+
+                            
 
     </section>
 

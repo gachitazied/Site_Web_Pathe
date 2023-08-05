@@ -1,18 +1,14 @@
 <?php
 include '../controllers/cinemaC.php';
-
-
-
 $userC = new cinemasC();
 $listeUserC = $userC->affichercinema();
-
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ultras - Clothing Store eCommerce Store php Website Template</title>
+    <title>cinema</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,57 +31,20 @@ $listeUserC = $userC->affichercinema();
   </head>
   <body>
 
-    <div class="preloader-wrapper">
-      <div class="preloader">
-      </div>
-    </div>
 
-    <div class="search-popup">
-      <div class="search-popup-container">
 
-        <form role="search" method="get" class="search-form" action="">
-          <input type="search" id="search-form" class="search-field" placeholder="Type and press enter" value="" name="s" />
-          <button type="submit" class="search-submit"><a href="#"><i class="icon icon-search"></i></a></button>
-        </form>
-
-        <h5 class="cat-list-title">Browse Categories</h5>
-        
-        <ul class="cat-list">
-          <li class="cat-list-item">
-            <a href="shop.php" title="Men Jackets">Men Jackets</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Fashion">Fashion</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Casual Wears">Casual Wears</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Women">Women</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Trending">Trending</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Hoodie">Hoodie</a>
-          </li>
-          <li class="cat-list-item">
-            <a href="shop.php" title="Kids">Kids</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+   
     <header id="header">
       <div id="header-wrap">
         <nav class="secondary-nav border-bottom">
           <div class="container">
             <div class="row d-flex align-items-center">
               <div class="col-md-4 header-contact">
-                <p>Let's talk! <strong>+57 444 11 00 35</strong>
+                <p><strong></strong>
                 </p>
               </div>
               <div class="col-md-4 shipping-purchase text-center">
-                <p>Free shipping on a purchase value of $200</p>
+                <p></p>
               </div>
               <div class="col-md-4 col-sm-12 user-items">
                 <ul class="d-flex justify-content-end list-unstyled">
@@ -94,21 +53,7 @@ $listeUserC = $userC->affichercinema();
                       <i class="icon icon-user"></i>
                     </a>
                   </li>
-                  <li>
-                    <a href="cart.php">
-                      <i class="icon icon-shopping-cart"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="wishlist.php">
-                      <i class="icon icon-heart"></i>
-                    </a>
-                  </li>
-                  <li class="user-items search-item pe-3">
-                    <a href="#" class="search-button">
-                      <i class="icon icon-search"></i>
-                    </a>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
@@ -131,11 +76,8 @@ $listeUserC = $userC->affichercinema();
                     <ul class="menu-list">
 
                       <li class="menu-item has-sub">
-                        <a href="index.php" class="item-anchor d-flex align-item-center" data-effect="Home">Home<i class=""></i></a>
-                        <ul class="submenu">
-                          <li><a href="index.php" class="item-anchor">Home</a></li>
-                         
-                        </ul>
+                        <a href="index.php" class="item-anchor d-flex align-item-center" data-effect="Home">Films<i class=""></i></a>
+               
                       </li>
 
                       <li class="menu-item has-sub">
@@ -156,70 +98,69 @@ $listeUserC = $userC->affichercinema();
       </div>
     </header>
 
-    <section class="site-banner jarallax min-height300 padding-large" style="background: url(images/cinema.jpg) no-repeat; background-position: top;">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="page-title">Cinema</h1>
-            <div class="breadcrumbs">
-              <span class="item">
-                <a href="index.php">Home /</a>
-              </span>
-              <span class="item">Blog</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="billboard" class="overflow-hidden">
 
 
+ 
+    
+      <button class="button-prev">
+        <i class="icon icon-chevron-left"></i>
+      </button>
+      <button class="button-next">
+        <i class="icon icon-chevron-right"></i>
+      </button>
 
-    <section id="latest-blog" class="post-grid padding-large">
-      <div class="container">
-        <div class="row d-flex flex-wrap">
-        <h2 class="section-title">our Cinemas</h2>
-       
-        </div>
-        <div class="row d-flex flex-wrap">
+      <div class="swiper main-swiper">
+        <div class="swiper-wrapper">
         <?php
        foreach ($listeUserC as $cinemas) {
        ?>
-           
-          <article class="col-md-4 post-item">
-            <div class="image-holder zoom-effect">
-              <a href="single-post.php">
-
-              
-                <img src="images/<?php echo $cinemas['img_cinema'];?>" alt="post" class="post-image">
-              </a>
-            </div>
-            <div class="post-content d-flex">
-           
-              <div class="post-header">
-                <h3 class="post-title">
-                  <a href="shop.php?id_cinema=<?php echo $cinemas['id_cinema']; ?>"><?php echo $cinemas['nom_cinema'];?></a>
-                </h3>
-                <a  class="blog-categories"><?php echo $cinemas['lieu_cinema'];?></a>
+          <div class="swiper-slide" style="background-image: url('images/<?php echo $cinemas['img_cinema'];?>');background-repeat: no-repeat;background-size: cover;background-position: center;">
+            <div class="banner-content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2 class="banner-title"><?php echo $cinemas['nom_cinema'];?></h2>
+                    <p><?php echo $cinemas['lieu_cinema'];?></p>
+                    <div class="btn-wrap">
+                      <a href="shop.php?id_cinema=<?php echo $cinemas['id_cinema']; ?>"  class="btn btn-light btn-medium d-flex align-items-center" tabindex="0">show film<i class="icon icon-arrow-io"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </article>
-
-
-
+          </div>
           <?php
      }
     ?>
+        </div>
+      </div>
 
- 
 
- 
+
+
     </section>
 
 
 
-  
-    
+    <section id="instagram" class="padding-large">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" >Our Offre</h2>
+ 
+        <div class="row d-flex flex-wrap justify-content-between">
 
+
+          <div class="col-lg-2 col-md-4 col-sm-6" >
+            <figure class="zoom-effect">
+              <img src="images/insta-image5.jpg" alt="instagram" class="insta-image" >
+            </figure>
+          </div>
+ 
+        </div>          
+      </div>
+    </section>
     <hr>
 
 
@@ -324,9 +265,9 @@ $listeUserC = $userC->affichercinema();
   
 </footer>
 
-
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
+
   </body>
 </php>

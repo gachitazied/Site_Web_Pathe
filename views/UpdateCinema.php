@@ -8,7 +8,7 @@ if(
     
 {
     $cinemas = new cinemas($_POST['img_cinema'],$_POST['nom_cinema'],$_POST['lieu_cinema']);
-    $cinemasC->modifiercinema($id_cinema,$cinemas);
+    $cinemasC->modifiercinema($cinemas,$id_cinema);
 }
 else
 echo 'erreur';

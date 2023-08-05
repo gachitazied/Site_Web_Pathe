@@ -14,7 +14,7 @@
             }
         }
     
-        function afficherAboutfilm($id_film){
+        function afficherAboutfilm($id_film) {
             $sql = "SELECT * FROM films WHERE id_film = :id_film";
             $db = config::getConnexion();
             
