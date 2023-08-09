@@ -194,7 +194,42 @@
             </div>
             <!-- Form End -->
 
-           
+                       <!-- Form offre -->
+                       <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">form offre</h6>
+                            <form action="AddOffre.php" id="myForm" method="post" >
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">image de offre</label>
+                                <input  class="form-control bg-dark" type="file" id="formFile" accept="image/jpeg, image/png, image/jpg" name="register-img_offre">
+                             </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Nom de offre</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" name="register-nom_offre">
+                                    <div id="emailHelp" class="form-text">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">desciption de offre</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" name="register-desc_offre">
+                                    <div id="emailHelp" class="form-text">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">date de offre</label>
+                                    <input type="date" class="form-control" id="exampleInputPassword1" name="register-date_offre">
+                                </div>
+            
+                                <button type="submit" class="btn btn-primary">Register offre</button>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+            <!-- Form End -->
 
         </div>
         <!-- Content End -->

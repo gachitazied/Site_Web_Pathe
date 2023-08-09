@@ -2,7 +2,15 @@
 include '../controllers/cinemaC.php';
 $userC = new cinemasC();
 $listeUserC = $userC->affichercinema();
+
+
+
+include '../controllers/offreC.php';
+$offreC = new offresC();
+$listeoffreC = $offreC->afficheroffre();
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -143,22 +151,37 @@ $listeUserC = $userC->affichercinema();
     </section>
 
 
-
-    <section id="instagram" class="padding-large">
+    <section id="latest-blog" class="padding-large">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title" >Our Offre</h2>
+        <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
+          <h2 class="section-title">our Offre</h2>
  
-        <div class="row d-flex flex-wrap justify-content-between">
+        </div>
+        <div class="row d-flex flex-wrap">
+        <?php
+       foreach ($listeoffreC as $offreC) {
+       ?>
+          <article class="col-md-4 post-item">
+            <div class="image-holder zoom-effect">
+              <a href="single-post.html">
+                <img src="images/<?php echo $offreC['img_offre'];?>" alt="post" class="post-image">
+              </a>
+            </div>
+            <div class="post-content d-flex">
 
-
-          <div class="col-lg-2 col-md-4 col-sm-6" >
-            <figure class="zoom-effect">
-              <img src="images/insta-image5.jpg" alt="instagram" class="insta-image" >
-            </figure>
-          </div>
- 
-        </div>          
+              <div class="post-header">
+                <h3 class="post-title">
+                  <a><?php echo $offreC['nom_offre'];?></a>
+                </h3>
+                <a href="InscriOffre.php?id_offre=<?php echo $offreC['id_offre'];?>" class="blog-categories"><?php echo $offreC['nom_offre'];?></a>
+              </div>
+            </div>
+          </article>
+          
+          <?php
+     }
+    ?>
+        </div>
       </div>
     </section>
     <hr>

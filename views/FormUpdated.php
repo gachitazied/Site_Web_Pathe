@@ -178,17 +178,17 @@ $cinemas = $cinemasC->recuperercinema($id_cinema);
                             <form class="forum"  method="POST" action="UpdateCinema.php?id_cinema= <?php echo $id_cinema ?>"  >
                             <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">image de cinema</label>
-                                    <input type="file" class="form-control"  name="img_film" value="<?php echo $cinemas['img_cinema']; ?>">
+                                    <input type="file" class="form-control"  name="img_cinema" value="<?php echo $cinemas['img_cinema']; ?>">
                                     
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Nom de cinema</label>
-                                    <input type="text" class="form-control"  name="nom cinema" value="<?php echo $cinemas['nom_cinema'];?>">
+                                    <input type="text" class="form-control"  name="nom_cinema" value="<?php echo $cinemas['nom_cinema'];?>">
                                     
                                 </div>
                                 <div class="mb-3">  
                                     <label for="exampleInputPassword1" class="form-label">lieu </label>
-                                    <input type="text" class="form-control"  name="lieu cinema" value="<?php echo $cinemas['lieu_cinema'];?>" >
+                                    <input type="text" class="form-control"  name="lieu_cinema" value="<?php echo $cinemas['lieu_cinema'];?>" >
                                 </div>
             
                                 <button type="submit" class="btn btn-primary">Modifier</button>

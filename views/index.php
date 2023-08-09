@@ -109,7 +109,7 @@ $listfilmC = $films->afficherfilm();
               <div class="container">
                 <div class="row">
                   <div class="col-md-6">
-                    <h2 class="banner-title">Wolcome</h2>
+                    <h2 class="banner-title"></h2>
                     <p></p>
 
                   </div>

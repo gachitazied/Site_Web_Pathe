@@ -200,13 +200,13 @@ $dates = $datesC->recupererdate($id_film,$id_date);
                                
                                 <div class="mb-3">  
                                     <label for="exampleInputPassword1" class="form-label">date de film </label>
-                                    <input type="date" class="form-control"  name="" value="<?php echo $dates['date_date']; ?>">
+                                    <input type="date" class="form-control"  name="date_date" value="<?php echo $dates['date_date']; ?>">
                                 </div>
 
 
                                 <div class="mb-3">  
                                     <label for="exampleInputPassword1" class="form-label">heure debut film </label>
-                                    <input type="text" class="form-control"  name="" value="<?php echo $dates['heure_date']; ?>">
+                                    <input type="text" class="form-control"  name="heure_date" value="<?php echo $dates['heure_date']; ?>">
                                 </div>
                                 
                                 <button type="submit" class="btn btn-primary">Modifier</button>

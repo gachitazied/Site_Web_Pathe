@@ -908,8 +908,8 @@ fieldset[disabled] a.btn {
 img.video-image,
 img.post-image,
 img.insta-image {
-    width: 100%;
-    height: auto;
+    width: 696px;
+    height: 364px;
     object-fit: cover;
 }
 img.large-image {

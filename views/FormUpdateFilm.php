@@ -26,7 +26,7 @@ if (
         header("Location: TableFilm.php?id_cinema=$id_cinema");
 
 }
-$films = $filmsC->recupererfilm($id_film,$id_cinema);
+$filmsC = $filmsC->recupererfilm($id_film , $id_cinema);
 
 ?>
 
@@ -207,33 +207,33 @@ $films = $filmsC->recupererfilm($id_film,$id_cinema);
                             <form class="forum"  method="POST"  onsubmit="return submitValidation()" >
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">image de film</label>
-                                    <input type="file" class="form-control"  name="img_film" value="<?php echo $films['img_film']; ?>">
+                                    <input type="file" class="form-control"  name="img_film" value="<?php echo $filmsC['img_film']; ?>">
                                     
                                 </div>
                                 <div class="mb-3">  
                                     <label for="exampleInputPassword1" class="form-label">nom film </label>
-                                    <input type="text" class="form-control"  name="nom_film" value="<?php echo $films['nom_film']; ?>">
+                                    <input type="text" class="form-control"  name="nom_film" value="<?php echo $filmsC['nom_film']; ?>">
                                 </div>
 
 
                                 <div class="mb-3">  
                                     <label for="exampleInputPassword1" class="form-label">description de film </label>
-                                    <input type="text" class="form-control"  name="desc_film" value="<?php echo $films['desc_film']; ?>">
+                                    <input type="text" class="form-control"  name="desc_film" value="<?php echo $filmsC['desc_film']; ?>">
                                 </div>
 
                                 <div class="mb-3">  
                                     <label for="exampleInputPassword1" class="form-label">genre de film </label>
-                                    <input type="text" class="form-control"  name="genre_film" value="<?php echo $films['genre_film']; ?>">
+                                    <input type="text" class="form-control"  name="genre_film" value="<?php echo $filmsC['genre_film']; ?>">
                                 </div>
 
                                 <div class="mb-3">  
                                     <label for="exampleInputPassword1" class="form-label">dure de film </label>
-                                    <input type="text" class="form-control"  name="dure_film" value="<?php echo $films['dure_film']; ?>">
+                                    <input type="text" class="form-control"  name="dure_film" value="<?php echo $filmsC['dure_film']; ?>">
                                 </div>
 
                                 <div class="mb-3">  
                                     <label for="exampleInputPassword1" class="form-label">salle de film </label>
-                                    <input type="text" class="form-control"  name="salle_film" value="<?php echo $films['salle_film']; ?>">
+                                    <input type="text" class="form-control"  name="salle_film" value="<?php echo $filmsC['salle_film']; ?>">
                                 </div>
             
                                 <button type="submit" class="btn btn-primary">Modifier</button>

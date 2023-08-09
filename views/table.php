@@ -1,10 +1,16 @@
 <?php
 include '../controllers/cinemaC.php';
 include '../controllers/contactC.php';
+include '../controllers/reponseC.php';
+include '../controllers/offreC.php';
 $cinemas = new cinemasC();
 $listeUserC = $cinemas->affichercinema();
 $contacts = new contactsC();
 $listeContactC = $contacts->affichercontact();
+$reponses = new reponsesC();
+$listeReponseC = $reponses->afficherreponse();
+$offres = new offresC();
+$listeoffreC = $offres->afficheroffre();
 ?>
   <!DOCTYPE html>
 <html lang="en">
@@ -248,7 +254,7 @@ $listeContactC = $contacts->affichercontact();
                                         <td><?php echo $contacts['message_contact'];?></td>
                                        <td> <a href="DeleteContact.php?id_contact=<?php echo $contacts['id_contact']; ?>" class="btn">Delete</a></td>
                                        <td> <a href="FormUpdateContact.php?id_contact=<?php echo $contacts['id_contact']; ?>" class="btn">modifier</a></td>
-                                       <td> <a href="TableFilm.php?id_contact=<?php echo $contacts['id_contact']; ?>" class="btn">Reponse</a></td>
+                                       <td> <a href="formreponse.php?id_contact=<?php echo $contacts['id_contact'];?>"  class="btn">Reponse</a></td>
                                      
                                     </tr>
                                     
@@ -261,8 +267,98 @@ $listeContactC = $contacts->affichercontact();
                      </div>
                 </div>
             </div>
+
             <!-- Table End -->
 
+
+                        <!-- Table Start -->
+                        <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Table reponse</h6>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> ID reponse</th>
+                                        <th scope="col">adresse mail</th>
+                                        <th scope="col">reponse</th>
+                                        <th scope="col">ID de Contact</th>
+                      
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                         foreach ($listeReponseC as $reponses) {
+                          ?>
+                                    <tr>
+                                       
+                                        <td><?php echo $reponses['id_reponse'];?> </td>
+                                        <td><?php echo $reponses['email_reponse'];?></td>
+                                        <td><?php echo $reponses['reponse_reponse'];?></td>
+                                        <td><?php echo $reponses['id_contact'];?></td>
+                                       <td> <a href="DeleteReponse.php?id_reponse=<?php echo $reponses['id_reponse']; ?>" class="btn">Delete</a></td>
+                                       <td> <a href="FormUpdateReponse.php?id_reponse=<?php echo $reponses['id_reponse']; ?>" class="btn">modifier</a></td>
+                                       <td> <a href="sendmail.php?email=<?php echo $reponses['email_reponse'];?>&reponse=<?php echo $reponses['reponse_reponse'];?>"  class="btn">Mailing</a></td>
+                                    </tr>
+                                    
+                            <?php
+                            }
+                            ?>
+                                </tbody>
+                            </table>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            
+            <!-- Table End -->
+
+                        <!-- Table Start -->
+                        <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Table offre</h6>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> ID offre</th>
+                                        <th scope="col">img offre</th>
+                                        <th scope="col">nom_offre</th>
+                                        <th scope="col">description offre</th>
+                                        <th scope="col">date offre</th>
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                         foreach ($listeoffreC as $offres) {
+                          ?>
+                                    <tr>
+                                       
+                                        <td><?php echo $offres['id_offre'];?> </td>
+                                        <td><?php echo $offres['img_offre'];?></td>
+                                        <td><?php echo $offres['nom_offre'];?></td>
+                                        <td><?php echo $offres['desc_offre'];?></td>
+                                        <td><?php echo $offres['date_offre'];?></td>
+                                       <td> <a href="DeleteOffre.php?id_offre=<?php echo $offres['id_offre']; ?>" class="btn">Delete</a></td>
+                                       <td> <a href="FormUpdateOffre.php?id_offre=<?php echo $offres['id_offre']; ?>" class="btn">modifier</a></td>
+                                  
+                                    </tr>
+                                    
+                            <?php
+                            }
+                            ?>
+                                </tbody>
+                            </table>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            
+            <!-- Table End -->
 
         </div>
         <!-- Content End -->

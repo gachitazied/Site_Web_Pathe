@@ -178,23 +178,23 @@ $contacts = $contact->recuperercontact($id_contact);
                             <form class="forum"  method="POST" action="Updatecontact.php?id_contact= <?php echo $id_contact ?>"  >
                             <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">nom </label>
-                                    <input type="text" class="form-control"  name="img_film" value="<?php echo $contacts['nom_contact']; ?>">
+                                    <input type="text" class="form-control"  name="nom_contact" value="<?php echo $contacts['nom_contact']; ?>">
                                     
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">prenom</label>
-                                    <input type="text" class="form-control"  name="nom cinema" value="<?php echo $contacts['prenom_contact'];?>">
+                                    <input type="text" class="form-control"  name="prenom_contact" value="<?php echo $contacts['prenom_contact'];?>">
                                     
                                 </div>
                                 <div class="mb-3">  
                                     <label for="exampleInputPassword1" class="form-label">email </label>
-                                    <input type="text" class="form-control"  name="lieu cinema" value="<?php echo $contacts['email_contact'];?>" >
+                                    <input type="text" class="form-control"  name="email_contact" value="<?php echo $contacts['email_contact'];?>" >
                                 </div>
 
 
                                 <div class="mb-3">  
                                     <label for="exampleInputPassword1" class="form-label">message </label>
-                                    <input type="text" class="form-control"  name="lieu cinema" value="<?php echo $contacts['message_contact'];?>" >
+                                    <input type="text" class="form-control"  name="message_contact" value="<?php echo $contacts['message_contact'];?>" >
                                 </div>
             
                                 <button type="submit" class="btn btn-primary">Modifier</button>
