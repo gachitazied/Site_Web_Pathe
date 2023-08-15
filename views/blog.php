@@ -1,7 +1,7 @@
 <?php
 include '../controllers/cinemaC.php';
-$userC = new cinemasC();
-$listeUserC = $userC->affichercinema();
+$cinemaC = new cinemasC();
+$listecinemaC = $cinemaC->affichercinema();
 
 
 
@@ -121,9 +121,13 @@ $listeoffreC = $offreC->afficheroffre();
       <div class="swiper main-swiper">
         <div class="swiper-wrapper">
         <?php
-       foreach ($listeUserC as $cinemas) {
+       foreach ($listecinemaC as $cinemas) {
        ?>
-          <div class="swiper-slide" style="background-image: url('images/<?php echo $cinemas['img_cinema'];?>');background-repeat: no-repeat;background-size: cover;background-position: center;">
+          <div class="swiper-slide" >
+          <video autoplay loop muted class="banner-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+    <source src="videos/<?php echo $cinemas['img_cinema'];?>" type="video/mp4">
+
+  </video>
             <div class="banner-content">
               <div class="container">
                 <div class="row">

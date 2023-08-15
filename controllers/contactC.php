@@ -1,4 +1,5 @@
 <?php
+
 include_once '../config.php';
 include '../models/contact.php';
 class contactsC {

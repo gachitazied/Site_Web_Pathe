@@ -81,7 +81,7 @@ header("Location: TableDate.php?id_film=$id_film");
             
                     <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
             
-                   
+                    <a href="TableUser.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Table user</a>
                 </div>
             </nav>
         </div>

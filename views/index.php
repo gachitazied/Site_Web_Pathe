@@ -93,7 +93,11 @@ $listfilmC = $films->afficherfilm();
         </nav>
       </div>
     </header>
-    <section class="site-banner jarallax min-height300 padding-large" style="background: url(images/star.png) no-repeat; background-position: top;">
+    <section class="site-banner jarallax min-height300 padding-large" >
+    <video autoplay loop muted class="banner-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+    <source src="videos/eaux.mp4" type="video/mp4">
+
+  </video>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -102,7 +106,7 @@ $listfilmC = $films->afficherfilm();
               <span class="item">
                 <a href="index.php">Films /</a>
               </span>
-              <span class="item">Cinemas</span>
+              <span class="item"><a href="blog.php">Cinemas</a></span>
             </div>
           </div>
         </div>

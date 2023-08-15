@@ -69,7 +69,7 @@ $inscris = $inscri->recupererinscri($id_inscri);
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
             
                     <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-            
+                    <a href="TableUser.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Table user</a>
                    
                 </div>
             </nav>

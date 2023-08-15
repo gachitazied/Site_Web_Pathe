@@ -156,7 +156,7 @@ $listfilmC = $filmsC->joincinema($id_cinema);
                 </div>
                 <div class="product-detail">
                   <h3 class="product-title">
-                    <a href="single-product.php"><?php echo $films['nom_film'];?></a>
+                    <a href="#"><?php echo $films['nom_film'];?></a>
                   </h3>
                   <div class="item-price text-primary"><?php echo $films['dure_film'];?></div>
                 </div>

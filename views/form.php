@@ -62,6 +62,7 @@
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
             
                     <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    <a href="TableUser.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Table user</a>
             
                    
                 </div>
@@ -163,36 +164,34 @@
             </nav>
             <!-- Navbar End -->
 
-
-            <!-- Form cinema -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">form cinema</h6>
-                            <form action="AddCinema.php" id="myForm" method="post" >
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">image de film</label>
-                                <input  class="form-control bg-dark" type="file" id="formFile" accept="image/jpeg, image/png, image/jpg" name="register-img_cinema">
-                             </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Nom de cinema</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" name="register-nom_cinema">
-                                    <div id="emailHelp" class="form-text">
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">lieu de cinema</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" name="register-lieu_cinema">
-                                </div>
-            
-                                <button type="submit" class="btn btn-primary">Register Cinema</button>
-                            </form>
-                        </div>
+<!-- Form cinema -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Form cinema</h6>
+                <form action="AddCinema.php" id="myForm" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="mediaFile" class="form-label">Image ou vidéo de film</label>
+                        <input class="form-control bg-dark" type="file" id="mediaFile" accept="image/jpeg, image/png, image/jpg, video/mp4" name="register-img_cinema">
                     </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Nom de cinema</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" name="register-nom_cinema">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Lieu de cinema</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name="register-lieu_cinema">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register Cinema</button>
+                </form>
             </div>
-            <!-- Form End -->
+        </div>
+    </div>
+</div>
+<!-- Form End -->
+
 
                        <!-- Form offre -->
                        <div class="container-fluid pt-4 px-4">
