@@ -72,7 +72,31 @@ return $cinemas;
 }catch (Exception $e){
     $e->getMessage();}
 }
+function affichertriContact(){
+			
+    $sql="SELECT * FROM contacts ORDER BY nom_contact";
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
+function afficherRechercheContact($rech){
+			
+    $sql = "SELECT * FROM contacts WHERE nom_contact LIKE '%$rech%' OR prenom_contact LIKE '%$rech%' OR email_contact LIKE '%$rech%' ";
 
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
 
 }
 ?>

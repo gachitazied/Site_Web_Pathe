@@ -71,7 +71,31 @@ return $cinemas;
 }catch (Exception $e){
     $e->getMessage();}
 }
+function affichertriCinema(){
+			
+    $sql="SELECT * FROM cinemas ORDER BY lieu_cinema";
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
+function afficherRechercheCinema($rech){
+			
+    $sql = "SELECT * FROM cinemas WHERE nom_cinema LIKE '%$rech%' OR lieu_cinema LIKE '%$rech%'";
 
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
 
 }
 ?>

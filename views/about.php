@@ -18,7 +18,7 @@ $listeUserC = $films->afficherAboutfilm($id_film);
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ultras - Clothing Store eCommerce Store php Website Template</title>
+    <title>Starlight Ciné</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,7 +72,7 @@ $listeUserC = $films->afficherAboutfilm($id_film);
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
                   <a href="index.php">
-                    <img src="images/main-logo.png" alt="logo">
+                    <img src="images/logo3.png" alt="logo">
                   </a>
                 </div>
               </div>
@@ -105,7 +105,7 @@ $listeUserC = $films->afficherAboutfilm($id_film);
       </div>
     </header>
 
-    <section class="site-banner jarallax min-height300 padding-large" style="background: url(images/pop.jpg) no-repeat;">
+    <section class="site-banner jarallax min-height300 padding-large" style="background: url(images/star.png) no-repeat;">
     <?php
                          foreach ($listeUserC as $films) {
                           ?>

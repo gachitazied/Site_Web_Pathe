@@ -9,7 +9,7 @@ $listfilmC = $filmsC->joincinema($id_cinema);
 
 <head>
     <meta charset="utf-8">
-    <title>Ciné Paradis</title>
+    <title>Starlight Ciné</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -52,7 +52,7 @@ $listfilmC = $filmsC->joincinema($id_cinema);
                <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Ciné Paradis</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Starlight Ciné</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -172,9 +172,9 @@ $listfilmC = $filmsC->joincinema($id_cinema);
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
+                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;">
                             <h6 class="mb-4">films Table</h6>
-                            <table class="table">
+                            <table class="table" style="width: 1200px; height: 600px;">
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID Film</th>

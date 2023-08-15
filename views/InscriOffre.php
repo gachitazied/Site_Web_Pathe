@@ -10,7 +10,7 @@ $listeoffreC = $offres->afficherDescOffre($id_offre);
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ultras - Clothing Store eCommerce Store HTML Website Template</title>
+    <title>Starlight Ciné</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +63,7 @@ $listeoffreC = $offres->afficherDescOffre($id_offre);
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
                   <a href="index.php">
-                    <img src="images/main-logo.png" alt="logo">
+                    <img src="images/logo3.png" alt="logo">
                   </a>
                 </div>
               </div>
@@ -104,9 +104,6 @@ $listeoffreC = $offres->afficherDescOffre($id_offre);
     <hr>
     <section class="contact-information padding-large">
 
-    <?php
-               foreach ($listeoffreC as $offres) {
-                ?>
       <div class="container">
         <div class="row">
               
@@ -115,6 +112,9 @@ $listeoffreC = $offres->afficherDescOffre($id_offre);
 
        
 
+            <?php
+               foreach ($listeoffreC as $offres) {
+                ?>
                  <div class="section-header">
                      <h2 class="section-title"><?php echo $offres['nom_offre'];?></h2>
                    </div>
@@ -134,6 +134,11 @@ $listeoffreC = $offres->afficherDescOffre($id_offre);
                   <img src="images/<?php echo $offres['img_offre'];?>" alt="post" class="post-image">
                  </a>
                   </div>
+
+                  <?php
+     }
+    ?>
+
                 </div>
 
             </div>
@@ -147,7 +152,7 @@ $listeoffreC = $offres->afficherDescOffre($id_offre);
                 <h2 class="section-title">Inscription</h2>
               </div>
 
-              <form name="contactform" action="AddInscri.php"  id="myForm" method="post" class="contact-form">
+              <form name="contactform" action="Addinscri.php"  id="myForm" method="post" class="contact-form">
                 <div class="form-item">
 
 
@@ -169,8 +174,20 @@ $listeoffreC = $offres->afficherDescOffre($id_offre);
                   <input type="text" id="nombre" name="register-nombre_inscri" placeholder="Nombre*" class="u-full-width bg-light" >
                   <span id="errornombre"></span>
 
+
+
+                  <input type="text" id="telephone" name="register-nom_offre" placeholder="nom offre *" class="u-full-width bg-light"  value="<?php echo $offres['nom_offre'];?>"  >
+               
+
+                  <input type="text" id="telephone" name="register-id_offre" placeholder="numero d'offre *" class="u-full-width bg-light" value="<?php echo $offres['id_offre'];?>"  >
+                 
+
+
+
                   <textarea class="u-full-width bg-light" id="mess" name="register-message_inscri" placeholder="Message" style="height: 180px;" ></textarea>
                   <span id="errormessage"></span>
+ 
+
 
 
                 </div>
@@ -183,9 +200,7 @@ $listeoffreC = $offres->afficherDescOffre($id_offre);
    
         </div>
       </div>
-      <?php
-     }
-    ?>
+
     </section>
 
     <script>

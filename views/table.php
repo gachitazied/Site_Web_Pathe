@@ -1,23 +1,66 @@
 <?php
+
 include '../controllers/cinemaC.php';
 include '../controllers/contactC.php';
 include '../controllers/reponseC.php';
 include '../controllers/offreC.php';
+include '../controllers/inscriC.php';
+
+
+
+
 $cinemas = new cinemasC();
+if(isset($_POST["type"]))
+{
+if($_POST["type"] == "tri"){
+  $listeUserC = $cinemas->affichertriCinema();
+}
+else if($_POST["type"] == "search"){
+  $listeUserC = $cinemas->afficherRechercheCinema($_POST["search"]);
+}
+}
+else
 $listeUserC = $cinemas->affichercinema();
+
+
 $contacts = new contactsC();
+if(isset($_POST["typeContact"]))
+{
+if($_POST["typeContact"] == "triContact"){
+  $listeContactC = $contacts->affichertriContact();
+}
+else if($_POST["typeContact"] == "searchContact"){
+  $listeContactC = $contacts->afficherRechercheContact($_POST["searchContact"]);
+}
+}
+else
 $listeContactC = $contacts->affichercontact();
+
+
+
+
+
+
+
+
+
+
 $reponses = new reponsesC();
 $listeReponseC = $reponses->afficherreponse();
 $offres = new offresC();
 $listeoffreC = $offres->afficheroffre();
+$inscris = new inscrisC();
+$listeInscriC = $inscris->afficherinscri();
+
+
+
 ?>
   <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Ciné Paradis</title>
+    <title>Starlight Ciné</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -56,11 +99,11 @@ $listeoffreC = $offres->afficheroffre();
         <!-- Spinner End -->
 
 
-               <!-- Sidebar Start -->
+               <!-- Sidebar Start -->   
                <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Ciné Paradis</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Starlight Ciné</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -81,7 +124,7 @@ $listeoffreC = $offres->afficheroffre();
                 </div>
             </nav>
         </div>
-        <!-- Sidebar End -->
+        <!-- Sidebar End -->                                
 
 
         <!-- Content Start -->
@@ -181,9 +224,27 @@ $listeoffreC = $offres->afficheroffre();
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
+                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;">
                             <h6 class="mb-4">Cinema Table</h6>
-                            <table class="table">
+                            <table class="table" style="width: 1200px; height: 600px;" >
+<!-- tri&recherche -->
+<form class="d-none d-md-flex ms-4" method="POST">
+    <input type="search" name="search" id="search" class="form-control bg-dark border-0" placeholder="Search">
+    <input type="hidden" name="type" value="search">
+</form>
+
+                <form class="d-none d-md-flex ms-4" action="" method="POST" >
+                    <button type="tri" class="btn btn-primary m-2" value="tri" name="type" >trier le Cinema</button>
+                </form>
+ <!-- tri&recherche -->
+
+ <form method="POST" action="generate_pdf.php">
+    <input type="hidden" name="type" value="pdf">
+    <button type="submit" class="btn btn-success m-2">Generate PDF</button>
+</form>
+
+
+
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID cinema</th>
@@ -228,9 +289,21 @@ $listeoffreC = $offres->afficheroffre();
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
+                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;" >
                             <h6 class="mb-4">Table Contact</h6>
-                            <table class="table">
+                            <table class="table"  style="width: 1200px; height: 600px;"  >
+
+ <!-- tri&recherche -->
+<form class="d-none d-md-flex ms-4" method="POST">
+    <input type="searchContact" name="searchContact" id="search" class="form-control bg-dark border-0" placeholder="Search Contact">
+    <input type="hidden" name="typeContact" value="searchContact">
+</form>
+
+                <form class="d-none d-md-flex ms-4" action="" method="POST" >
+                    <button type="triContact" class="btn btn-primary m-2" value="triContact" name="typeContact" >trier</button>
+                </form>
+ <!-- tri&recherche -->
+
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID contact</th>
@@ -275,9 +348,9 @@ $listeoffreC = $offres->afficheroffre();
                         <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
+                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;" >
                             <h6 class="mb-4">Table reponse</h6>
-                            <table class="table">
+                            <table class="table"  style="width: 1200px; height: 600px;"  >
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID reponse</th>
@@ -319,9 +392,9 @@ $listeoffreC = $offres->afficheroffre();
                         <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
+                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;">
                             <h6 class="mb-4">Table offre</h6>
-                            <table class="table">
+                            <table class="table"  style="width: 1200px; height: 600px;"  >
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID offre</th>
@@ -345,6 +418,62 @@ $listeoffreC = $offres->afficheroffre();
                                         <td><?php echo $offres['date_offre'];?></td>
                                        <td> <a href="DeleteOffre.php?id_offre=<?php echo $offres['id_offre']; ?>" class="btn">Delete</a></td>
                                        <td> <a href="FormUpdateOffre.php?id_offre=<?php echo $offres['id_offre']; ?>" class="btn">modifier</a></td>
+                                  
+                                    </tr>
+                                    
+                            <?php
+                            }
+                            ?>
+                                </tbody>
+                            </table>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            
+            <!-- Table End -->
+
+
+                        <!-- Table End -->
+
+                        <!-- Table Start -->
+                        <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;" >
+                            <h6 class="mb-4">table inscription d'offre</h6>
+                            <table class="table"  style="width: 1200px; height: 600px;"  >
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> ID insciption</th>
+                                        <th scope="col">nom incription</th>
+                                        <th scope="col">prenom inscription</th>
+                                        <th scope="col">email inscription</th>
+                                        <th scope="col"> telephone inscription</th>
+                                        <th scope="col"> nombre inscription</th>
+                                        <th scope="col">message inscription</th>
+                                        <th scope="col">nom de offre</th>
+                                        <th scope="col">numero de offre</th>
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                         foreach ($listeInscriC as $inscris) {
+                          ?>
+                                    <tr>
+                                       
+                                        <td><?php echo $inscris['id_inscri'];?> </td>
+                                        <td><?php echo $inscris['nom_inscri'];?></td>
+                                        <td><?php echo $inscris['prenom_inscri'];?></td>
+                                        <td><?php echo $inscris['email_inscri'];?></td>
+                                        <td><?php echo $inscris['telephone_inscri'];?></td>
+                                        <td><?php echo $inscris['nombre_inscri'];?></td>
+                                        <td><?php echo $inscris['message_inscri'];?></td>
+                                        <td><?php echo $inscris['nom_offre'];?></td>
+                                        <td><?php echo $inscris['id_offre'];?></td>
+                                       <td> <a href="DeleteInscri.php?id_inscri=<?php echo $inscris['id_inscri']; ?>" class="btn">Delete</a></td>
+                                       <td> <a href="FormUpdateInscri.php?id_inscri=<?php echo $inscris['id_inscri']; ?>" class="btn">modifier</a></td>
                                   
                                     </tr>
                                     

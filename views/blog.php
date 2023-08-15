@@ -16,7 +16,7 @@ $listeoffreC = $offreC->afficheroffre();
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>cinema</title>
+    <title>Starlight Ciné</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,7 +73,7 @@ $listeoffreC = $offreC->afficheroffre();
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
                   <a href="index.php">
-                    <img src="images/main-logo.png" alt="logo">
+                    <img src="images/logo3.png" alt="logo">
                   </a>
                 </div>
               </div>

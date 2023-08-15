@@ -7,7 +7,7 @@ $listfilmC = $films->afficherfilm();
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ultras - Clothing Store eCommerce Store php Website Template</title>
+    <title>Starlight Ciné</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +61,7 @@ $listfilmC = $films->afficherfilm();
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
                   <a href="index.php">
-                    <img src="images/main-logo.png" alt="logo">
+                    <img src="images/logo3.png" alt="logo">
                   </a>
                 </div>
               </div>
@@ -93,31 +93,18 @@ $listfilmC = $films->afficherfilm();
         </nav>
       </div>
     </header>
-
-    <section id="billboard" class="overflow-hidden">
-
-      <button class="button-prev">
-        <i class="icon icon-chevron-left"></i>
-      </button>
-      <button class="button-next">
-        <i class="icon icon-chevron-right"></i>
-      </button>
-      <div class="swiper main-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('images/cinema.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
-            <div class="banner-content">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6">
-                    <h2 class="banner-title"></h2>
-                    <p></p>
-
-                  </div>
-                </div>
-              </div>
+    <section class="site-banner jarallax min-height300 padding-large" style="background: url(images/star.png) no-repeat; background-position: top;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            
+            <div class="breadcrumbs">
+              <span class="item">
+                <a href="index.php">Films /</a>
+              </span>
+              <span class="item">Cinemas</span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -143,7 +130,7 @@ $listfilmC = $films->afficherfilm();
                 </div>
                 <div class="cart-concern">
                   <div class="cart-button d-flex justify-content-between align-items-center">
-                    <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
+                    <button type="button" class="btn-wrap cart-link d-flex align-items-center">Description<i class="icon icon-arrow-io"></i>
                     </button>
                     <button type="button" class="view-btn tooltip
                         d-flex"  >
