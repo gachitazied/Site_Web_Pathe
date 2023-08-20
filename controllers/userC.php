@@ -204,7 +204,31 @@ function login() {
         echo 'Erreur: ' . $e->getMessage();
     }
 }
+function affichertriUser(){
+			
+    $sql="SELECT * FROM users ORDER BY nom_user";
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
+function afficherRechercheUser($rech){
+			
+    $sql = "SELECT * FROM users WHERE nom_user LIKE '%$rech%' OR prenom_user LIKE '%$rech%' OR email_user LIKE '%$rech%' OR role LIKE '%$rech%'";
 
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
 
 
 

@@ -7,7 +7,7 @@ $listfilmC = $films->afficherfilm();
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Starlight Ciné</title>
+    <title>ArabSoft Ciné</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -178,61 +178,40 @@ $listfilmC = $films->afficherfilm();
       <div class="row d-flex flex-wrap justify-content-between">
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="footer-menu">
-            <h5 class="widget-title">Ultras</h5>
+            <h5 class="widget-title">Ultra</h5>
             <ul class="menu-list list-unstyled">
               <li class="menu-item">
-                <a href="about.php">About us</a>
+                <a href="index.php">Nos Films </a>
+              </li>
+
+              <li class="menu-item">
+                <a href="blog.php">Nos Offres</a>
               </li>
               <li class="menu-item">
-                <a href="#">Conditions </a>
-              </li>
-              <li class="menu-item">
-                <a href="blog.php">Our Journals</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Careers</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Affiliate Programme</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Ultras Press</a>
-              </li>
+
+        
             </ul>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="footer-menu">
-            <h5 class="widget-title">Customer Service</h5>
+            <h5 class="widget-title">Service</h5>
             <ul class="menu-list list-unstyled">
-              <li class="menu-item">
-                <a href="faqs.php">FAQ</a>
-              </li>
+              
               <li class="menu-item">
                 <a href="contact.php">Contact</a>
               </li>
-              <li class="menu-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Returns & Refunds</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Cookie Guidelines</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Delivery Information</a>
-              </li>
+ 
             </ul>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="footer-menu">
             <h5 class="widget-title">Contact Us</h5>
-            <p>Do you have any questions or suggestions? <a href="#" class="email">ourservices@ultras.com</a>
+            <p>Contactez nous <a href="#" class="email">ArabSoft@gmail.com</a>
             </p>
-            <p>Do you need assistance? Give us a call. <br>
-              <strong>+57 444 11 00 35</strong>
+            <p>Nos Telephone 7/7 24/24 <br>
+              <strong>+216 72 444 555</strong>
             </p>
           </div>
         </div>

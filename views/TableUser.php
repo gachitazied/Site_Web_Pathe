@@ -1,6 +1,16 @@
 <?php
 include '../controllers/userC.php';
 $users = new usersC();
+if(isset($_POST["typeUser"]))
+{
+if($_POST["typeUser"] == "triUser"){
+  $listeUserC = $users->affichertriUser();
+}
+else if($_POST["typeUser"] == "searchUser"){
+  $listeUserC = $users->afficherRechercheUser($_POST["searchUser"]);
+}
+}
+else
 $listeUserC = $users->afficheruser();
 ?>
   <!DOCTYPE html>
@@ -8,7 +18,7 @@ $listeUserC = $users->afficheruser();
 
 <head>
     <meta charset="utf-8">
-    <title>Starlight Ciné</title>
+    <title>ArabSoft Ciné</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -51,7 +61,7 @@ $listeUserC = $users->afficheruser();
                <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Starlight Ciné</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>ArabSoft Ciné</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -185,6 +195,22 @@ $listeUserC = $users->afficheruser();
                         <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;">
                             <h6 class="mb-4">user table</h6>
                             <table class="table" style="width: 1200px; height: 600px;">
+                             <!-- tri&recherche -->
+<form class="d-none d-md-flex ms-4" method="POST">
+    <input type="searchUser" name="searchUser" id="search" class="form-control bg-dark border-0" placeholder="Search User">
+    <input type="hidden" name="typeUser" value="searchUser">
+</form>
+
+                <form class="d-none d-md-flex ms-4" action="" method="POST" >
+                    <button type="triUser" class="btn btn-primary m-2" value="triUser" name="typeUser" >trier</button>
+                </form>
+ <!-- tri&recherche -->
+
+
+ <form method="POST" action="generate_pdf8.php">
+    <input type="hidden" name="type" value="pdf">
+    <button type="submit" class="btn btn-success m-2">Generate PDF</button>
+</form>
                                 <thead>
                                     <tr>
                                         <th scope="col">ID user</th>

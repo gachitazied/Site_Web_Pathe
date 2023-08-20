@@ -34,10 +34,10 @@ if (isset($_POST["type"]) && $_POST["type"] === "pdf") {
     // Output the HTML content with custom design
     $html = '<h1 style="text-align: center;">Reservation Table</h1>';
     $html .= '<table border="1" cellpadding="5" style="width: 100%;">';
-    $html .= '<thead><tr><th>ID</th><th>Image</th><th>Nom</th><th>Lieu</th></tr></thead>';
+    $html .= '<thead><tr><th>ID</th><th>Film</th><th>Date</th><th>Heure</th><th>Nombre de Places</th><th>Email</th></tr></thead>';
     $html .= '<tbody>';
-
-    foreach ($listeReservationsC as $reservations)  {
+    
+    foreach ($listeReservationsC as $reservations) {
         $html .= '<tr>';
         $html .= '<td>' . $reservations['id_reservation'] . '</td>';
         $html .= '<td>' . $reservations['film_reservation'] . '</td>';
@@ -45,10 +45,9 @@ if (isset($_POST["type"]) && $_POST["type"] === "pdf") {
         $html .= '<td>' . $reservations['heure_reservation'] . '</td>';
         $html .= '<td>' . $reservations['place_reservation'] . '</td>';
         $html .= '<td>' . $reservations['email_reservation'] . '</td>';
-
         $html .= '</tr>';
     }
-
+    
     $html .= '</tbody></table>';
 
     $pdf->writeHTML($html, true, false, true, false, '');

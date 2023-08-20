@@ -29,10 +29,10 @@ if (isset($_POST["type"]) && $_POST["type"] === "pdf") {
     // Output the HTML content with custom design
     $html = '<h1 style="text-align: center;">Inscription Table</h1>';
     $html .= '<table border="1" cellpadding="5" style="width: 100%;">';
-    $html .= '<thead><tr><th>ID</th><th>Image</th><th>Nom</th><th>Lieu</th></tr></thead>';
+    $html .= '<thead><tr><th>ID</th><th>Nom</th><th>Prénom</th><th>Email</th><th>Téléphone</th><th>Nombre</th><th>Message</th><th>Nom Offre</th><th>ID Offre</th></tr></thead>';
     $html .= '<tbody>';
-
-    foreach ($listeInscriC as $inscris)  {
+    
+    foreach ($listeInscriC as $inscris) {
         $html .= '<tr>';
         $html .= '<td>' . $inscris['id_inscri'] . '</td>';
         $html .= '<td>' . $inscris['nom_inscri'] . '</td>';
@@ -45,7 +45,7 @@ if (isset($_POST["type"]) && $_POST["type"] === "pdf") {
         $html .= '<td>' . $inscris['id_offre'] . '</td>';
         $html .= '</tr>';
     }
-
+    
     $html .= '</tbody></table>';
 
     $pdf->writeHTML($html, true, false, true, false, '');
