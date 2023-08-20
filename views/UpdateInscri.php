@@ -26,5 +26,5 @@ if(
 }
 else
 echo 'erreur';
-header('Location: table.php');
+header('Location: table4.php');
 ?>

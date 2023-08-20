@@ -5,5 +5,5 @@ $id_inscri = $_GET['id_inscri'];
 
 
 $inscrisC->supprimerinscri($id_inscri);
-header("Location: table.php");
+header("Location: table4.php");
 ?>

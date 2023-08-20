@@ -30,6 +30,18 @@
         }
         
 
+        function recupererFilm1($id_film){
+            $sql="SELECT * from films where id_film=$id_film";
+            $db = config::getConnexion();
+        try{
+            $query = $db->prepare($sql);
+        $query->execute();
+        $cinemas=$query->fetch();
+        return $cinemas;
+        }catch (Exception $e){
+            $e->getMessage();}
+        }
+
 
         function supprimerfilm($id_film){
             $sql=" DELETE FROM films WHERE id_film=:id_film";
@@ -120,6 +132,32 @@
         catch(Exception $e){
             die('Erreur:' . $e->getMessage());
         }
+    }
+
+    function affichertriFilm(){
+			
+        $sql="SELECT * FROM films ORDER BY nom_film ";
+        $db = config::getConnexion();
+        try{
+            $cinemas = $db->query($sql);
+            return $cinemas;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+    }
+    function afficherRechercheFilm($rech){
+                
+        $sql = "SELECT * FROM films WHERE nom_film LIKE '%$rech%' OR genre_film LIKE '%$rech%' ";
+    
+        $db = config::getConnexion();
+        try{
+            $cinemas = $db->query($sql);
+            return $cinemas;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
     }
 
 

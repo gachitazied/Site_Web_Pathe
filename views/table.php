@@ -5,7 +5,8 @@ include '../controllers/contactC.php';
 include '../controllers/reponseC.php';
 include '../controllers/offreC.php';
 include '../controllers/inscriC.php';
-
+include '../controllers/reservationC.php';
+require_once '../controllers/session.php';
 
 
 
@@ -52,7 +53,8 @@ $listeoffreC = $offres->afficheroffre();
 $inscris = new inscrisC();
 $listeInscriC = $inscris->afficherinscri();
 
-
+$reservations = new reservationsC();
+$listeReservationsC = $reservations->afficherreservation();
 
 ?>
   <!DOCTYPE html>
@@ -117,9 +119,22 @@ $listeInscriC = $inscris->afficherinscri();
                    
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
             
-                    <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    
             
                     <a href="TableUser.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Table user</a>
+
+
+                    <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="table.php" class="dropdown-item">Cinemas</a>
+                            <a href="table1.php" class="dropdown-item">Contacts</a>
+                            <a href="table2.php" class="dropdown-item">Reponses</a>
+                            <a href="table3.php" class="dropdown-item">Offres</a>
+                            <a href="table4.php" class="dropdown-item">Inscriptions</a>
+                            <a href="table5.php" class="dropdown-item">Reservation</a>
+                        </div>
+                    </div>
                    
                 </div>
             </nav>
@@ -285,210 +300,7 @@ $listeInscriC = $inscris->afficherinscri();
 
 
             
-            <!-- Table Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;" >
-                            <h6 class="mb-4">Table Contact</h6>
-                            <table class="table"  style="width: 1200px; height: 600px;"  >
-
- <!-- tri&recherche -->
-<form class="d-none d-md-flex ms-4" method="POST">
-    <input type="searchContact" name="searchContact" id="search" class="form-control bg-dark border-0" placeholder="Search Contact">
-    <input type="hidden" name="typeContact" value="searchContact">
-</form>
-
-                <form class="d-none d-md-flex ms-4" action="" method="POST" >
-                    <button type="triContact" class="btn btn-primary m-2" value="triContact" name="typeContact" >trier</button>
-                </form>
- <!-- tri&recherche -->
-
-                                <thead>
-                                    <tr>
-                                        <th scope="col"> ID contact</th>
-                                        <th scope="col">nom contact</th>
-                                        <th scope="col">prenom contact</th>
-                                        <th scope="col">email contact</th>
-                                        <th scope="col">message contact</th>
-                                       
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                         foreach ($listeContactC as $contacts) {
-                          ?>
-                                    <tr>
-                                       
-                                        <td><?php echo $contacts['id_contact'];?> </td>
-                                        <td><?php echo $contacts['nom_contact'];?></td>
-                                        <td><?php echo $contacts['prenom_contact'];?></td>
-                                        <td><?php echo $contacts['email_contact'];?></td>
-                                        <td><?php echo $contacts['message_contact'];?></td>
-                                       <td> <a href="DeleteContact.php?id_contact=<?php echo $contacts['id_contact']; ?>" class="btn">Delete</a></td>
-                                       <td> <a href="FormUpdateContact.php?id_contact=<?php echo $contacts['id_contact']; ?>" class="btn">modifier</a></td>
-                                       <td> <a href="formreponse.php?id_contact=<?php echo $contacts['id_contact'];?>"  class="btn">Reponse</a></td>
-                                     
-                                    </tr>
-                                    
-                            <?php
-                            }
-                            ?>
-                                </tbody>
-                            </table>
-                        </div>
-                     </div>
-                </div>
-            </div>
-
-            <!-- Table End -->
-
-
-                        <!-- Table Start -->
-                        <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;" >
-                            <h6 class="mb-4">Table reponse</h6>
-                            <table class="table"  style="width: 1200px; height: 600px;"  >
-                                <thead>
-                                    <tr>
-                                        <th scope="col"> ID reponse</th>
-                                        <th scope="col">adresse mail</th>
-                                        <th scope="col">reponse</th>
-                                        <th scope="col">ID de Contact</th>
-                      
-                                       
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                         foreach ($listeReponseC as $reponses) {
-                          ?>
-                                    <tr>
-                                       
-                                        <td><?php echo $reponses['id_reponse'];?> </td>
-                                        <td><?php echo $reponses['email_reponse'];?></td>
-                                        <td><?php echo $reponses['reponse_reponse'];?></td>
-                                        <td><?php echo $reponses['id_contact'];?></td>
-                                       <td> <a href="DeleteReponse.php?id_reponse=<?php echo $reponses['id_reponse']; ?>" class="btn">Delete</a></td>
-                                       <td> <a href="FormUpdateReponse.php?id_reponse=<?php echo $reponses['id_reponse']; ?>" class="btn">modifier</a></td>
-                                       <td> <a href="sendmail.php?email=<?php echo $reponses['email_reponse'];?>&reponse=<?php echo $reponses['reponse_reponse'];?>"  class="btn">Mailing</a></td>
-                                    </tr>
-                                    
-                            <?php
-                            }
-                            ?>
-                                </tbody>
-                            </table>
-                        </div>
-                     </div>
-                </div>
-            </div>
-            
-            <!-- Table End -->
-
-                        <!-- Table Start -->
-                        <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;">
-                            <h6 class="mb-4">Table offre</h6>
-                            <table class="table"  style="width: 1200px; height: 600px;"  >
-                                <thead>
-                                    <tr>
-                                        <th scope="col"> ID offre</th>
-                                        <th scope="col">img offre</th>
-                                        <th scope="col">nom_offre</th>
-                                        <th scope="col">description offre</th>
-                                        <th scope="col">date offre</th>
-                                       
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                         foreach ($listeoffreC as $offres) {
-                          ?>
-                                    <tr>
-                                       
-                                        <td><?php echo $offres['id_offre'];?> </td>
-                                        <td><?php echo $offres['img_offre'];?></td>
-                                        <td><?php echo $offres['nom_offre'];?></td>
-                                        <td><?php echo $offres['desc_offre'];?></td>
-                                        <td><?php echo $offres['date_offre'];?></td>
-                                       <td> <a href="DeleteOffre.php?id_offre=<?php echo $offres['id_offre']; ?>" class="btn">Delete</a></td>
-                                       <td> <a href="FormUpdateOffre.php?id_offre=<?php echo $offres['id_offre']; ?>" class="btn">modifier</a></td>
-                                  
-                                    </tr>
-                                    
-                            <?php
-                            }
-                            ?>
-                                </tbody>
-                            </table>
-                        </div>
-                     </div>
-                </div>
-            </div>
-            
-            <!-- Table End -->
-
-
-                        <!-- Table End -->
-
-                        <!-- Table Start -->
-                        <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;" >
-                            <h6 class="mb-4">table inscription d'offre</h6>
-                            <table class="table"  style="width: 1200px; height: 600px;"  >
-                                <thead>
-                                    <tr>
-                                        <th scope="col"> ID insciption</th>
-                                        <th scope="col">nom incription</th>
-                                        <th scope="col">prenom inscription</th>
-                                        <th scope="col">email inscription</th>
-                                        <th scope="col"> telephone inscription</th>
-                                        <th scope="col"> nombre inscription</th>
-                                        <th scope="col">message inscription</th>
-                                        <th scope="col">nom de offre</th>
-                                        <th scope="col">numero de offre</th>
-                                       
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                         foreach ($listeInscriC as $inscris) {
-                          ?>
-                                    <tr>
-                                       
-                                        <td><?php echo $inscris['id_inscri'];?> </td>
-                                        <td><?php echo $inscris['nom_inscri'];?></td>
-                                        <td><?php echo $inscris['prenom_inscri'];?></td>
-                                        <td><?php echo $inscris['email_inscri'];?></td>
-                                        <td><?php echo $inscris['telephone_inscri'];?></td>
-                                        <td><?php echo $inscris['nombre_inscri'];?></td>
-                                        <td><?php echo $inscris['message_inscri'];?></td>
-                                        <td><?php echo $inscris['nom_offre'];?></td>
-                                        <td><?php echo $inscris['id_offre'];?></td>
-                                       <td> <a href="DeleteInscri.php?id_inscri=<?php echo $inscris['id_inscri']; ?>" class="btn">Delete</a></td>
-                                       <td> <a href="FormUpdateInscri.php?id_inscri=<?php echo $inscris['id_inscri']; ?>" class="btn">modifier</a></td>
-                                  
-                                    </tr>
-                                    
-                            <?php
-                            }
-                            ?>
-                                </tbody>
-                            </table>
-                        </div>
-                     </div>
-                </div>
-            </div>
-            
-            <!-- Table End -->
-
+           
         </div>
         <!-- Content End -->
 

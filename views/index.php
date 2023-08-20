@@ -117,7 +117,7 @@ $listfilmC = $films->afficherfilm();
     <section id="selling-products" class="product-store bg-light-grey padding-large">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">All movies</h2>
+          <h2 class="section-title">À l'affiche</h2>
         </div>
         
         <div class="tab-content">
@@ -134,13 +134,13 @@ $listfilmC = $films->afficherfilm();
                 </div>
                 <div class="cart-concern">
                   <div class="cart-button d-flex justify-content-between align-items-center">
-                    <button type="button" class="btn-wrap cart-link d-flex align-items-center">Description<i class="icon icon-arrow-io"></i>
+                    <button type="button" class="btn-wrap cart-link d-flex align-items-center">Reservation<i class="icon icon-arrow-io"></i>
                     </button>
                     <button type="button" class="view-btn tooltip
                         d-flex"  >
                         <a href="about.php?id_film=<?php echo $films['id_film']; ?>"> <i class="icon icon-screen-full" ></i></a>
                       
-                      
+                    
                     </button>
                   </div>
                 </div>

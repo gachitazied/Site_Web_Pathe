@@ -77,10 +77,21 @@ header("Location: TableFilm.php?id_cinema=$id_cinema");
           
                    
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-            
-                    <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+
                     <a href="TableUser.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Table user</a>
-                   
+                    
+
+                    <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="table.php" class="dropdown-item">Cinemas</a>
+                            <a href="table1.php" class="dropdown-item">Contacts</a>
+                            <a href="table2.php" class="dropdown-item">Reponses</a>
+                            <a href="table3.php" class="dropdown-item">Offres</a>
+                            <a href="table4.php" class="dropdown-item">Inscriptions</a>
+                            <a href="table5.php" class="dropdown-item">Reservation</a>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>

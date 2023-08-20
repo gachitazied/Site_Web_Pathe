@@ -1,9 +1,28 @@
+
 <?php
 include '../controllers/filmC.php';
-$id_cinema = $_GET["id_cinema"];
+include '../controllers/dateC.php';
+
+
+
+
+$id_film = $_GET["id_film"];
+
+$id_date = $_GET["id_date"];
+
+
 $filmsC = new filmsC();
-$listfilmC = $filmsC->joincinema($id_cinema);
+$filmsC = $filmsC->recupererFilm1($id_film);
+
+
+
+$datesC = new datesC();
+ 
+$datesC = $datesC->recupererDate1($id_date);
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +49,6 @@ $listfilmC = $filmsC->joincinema($id_cinema);
     <script src="js/modernizr.js"></script>
   </head>
   <body>
-
   <header id="header">
       <div id="header-wrap">
         <nav class="secondary-nav border-bottom">
@@ -96,96 +114,91 @@ $listfilmC = $filmsC->joincinema($id_cinema);
     </header>
 
 
-    <section class="site-banner jarallax min-height300 padding-large" style="background: url(images/star.png) no-repeat; background-position: top;">
+   
+    <hr>
+
+
+    <hr>
+    <section class="contact-information padding-large">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <h1 class="page-title">Movie</h1>
-            <div class="breadcrumbs">
-              <span class="item">
-                <a href="index.php">Home /</a>
-              </span>
-              <span class="item">Shop</span>
+            <div class="contact-information">
+              <div class="section-header">
+                <h2 class="section-title">Reservation</h2>
+              </div>
+
+              <form name="contactform" action="AddReservation.php?id_date=<?php echo $datesC['id_date']; ?>&&id_film=<?php echo $filmsC['id_film']; ?>" id="myForm" method="post" class="contact-form">
+          <div class="form-item">
+
+          <div>    <input type="text" id="nom" name="film_reservation" class="u-full-width bg-light" value="<?php echo $filmsC['nom_film']; ?>">
+        <span id="errorname"></span>
+      
+      </div>
+          <div><input type="text" id="salle" name="salle_reservation" placeholder="Nombre Place" class="u-full-width bg-light" value="<?php echo $filmsC['salle_film']; ?>">
+        <span id="errorsalle"></span>
+      
+      </div>
+          <div>
+        <input type="text" id="date" name="date_reservation" placeholder="Date Film" class="u-full-width bg-light" value="<?php echo $datesC['date_date']; ?>">
+        <span id="errordate"></span>
+      
+      </div>
+          <div><input type="text" id="heure" name="heure_reservation" placeholder="Heure Film" class="u-full-width bg-light" value="<?php echo $datesC['heure_date']; ?>">
+        <span id="erreurheure"></span>
+      
+      </div>
+
+          <div> 
+              
+          
+          <input type="text" id="place" name="place_reservation" placeholder="Nombre Place" class="u-full-width bg-light">
+        <span id="errorplace"></span>
+      
+      </div>
+    
+      <div>
+        <input type="email" id="mail" name="email_reservation" placeholder="E-mail*" class="u-full-width bg-light">
+        <span id="erroremail"></span>
+      </div>     
+        <button  type="submit" name="submit" class="btn btn-dark btn-full btn-medium">Reservation</button>
+    </div>
+</form>
+
+
             </div>
-          </div>
+      
         </div>
       </div>
     </section>
 
-    <div class="shopify-grid padding-large">
-      <div class="container">
-        <div class="row">
+    <script>
+   let myForm = document.getElementById('myForm');
 
+myForm.addEventListener('submit', function(e) {
 
+  let mymail = document.getElementById('mail');
+  let myplace = document.getElementById('place');
 
+  
+  if (mymail.value == '') {
+    let error = document.getElementById('erroremail');
+    error.innerHTML = "Le champs est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
 
-
-        <section id="selling-products" class="product-store bg-light-grey padding-large">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Movie</h2>
-        </div>
-
-        <div class="tab-content">
-          <div id="all" data-tab-content class="active">
-            <div class="row d-flex flex-wrap">
-
-
-
-
-            <?php
-                         foreach ($listfilmC as $films) {
-                          ?>
-
-              <div class="product-item col-lg-3 col-md-6 col-sm-6">
-                <div class="image-holder">
-                  <img src="images/<?php echo $films['img_film'];?>" alt="Books" class="product-image">
-                </div>
-                <div class="cart-concern">
-                  <div class="cart-button d-flex justify-content-between align-items-center">
-                    <button type="button" class="btn-wrap cart-link d-flex align-items-center">Reservation <i class="icon icon-arrow-io"></i>
-                    </button>
-                    <button type="button" class="view-btn tooltip
-                        d-flex"  >
-                        <a href="about.php?id_film=<?php echo $films['id_film']; ?>"> <i class="icon icon-screen-full" ></i></a>
-                      
-                      
-                    </button>
+  if (myplace.value == '') {
+    let error = document.getElementById('errorplace');
+    error.innerHTML = "Le champs est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+})
+</script>
    
-                  </div>
-                </div>
-                <div class="product-detail">
-                  <h3 class="product-title">
-                    <a href="#"><?php echo $films['nom_film'];?></a>
-                  </h3>
-                  <div class="item-price text-primary"><?php echo $films['dure_film'];?></div>
-                </div>
-              </div>
 
-
-
-              <?php
-                            }
-                            ?>
-
-             
-    </section>
-          </section>
-
-         
-          
-        </div>        
-      </div>      
-    </div>
-
+   
     <hr>
-    
-   
-
-
-
-   
-
 
 
     <hr>

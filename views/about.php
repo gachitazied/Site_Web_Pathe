@@ -3,10 +3,23 @@ include '../controllers/filmC.php';
 include '../controllers/dateC.php';
 $films = new filmsC();
 $datesC = new datesC();
+
+
 $id_film = $_GET["id_film"];
 
 $listdateC = $datesC->joinfilm($id_film);
+
 $listeUserC = $films->afficherAboutfilm($id_film);
+
+
+$filmsC = new filmsC();
+$films = $filmsC->recupererFilm1($id_film);
+
+
+
+$datesC = new datesC();
+
+
 ?>
 
 
@@ -156,7 +169,7 @@ $listeUserC = $films->afficherAboutfilm($id_film);
                          foreach ($listdateC as $dates) {
                           ?>
                 <div class="btn-wrap">
-                  <a href="shop.php" class="btn btn-dark btn-medium d-flex align-items-center" tabindex="0"><?php echo $dates['date_date'];?> / <?php echo $dates['heure_date'];?> <i class="icon icon-arrow-io"></i>
+                  <a href="Reservation.php?id_date=<?php echo $dates['id_date']; ?>&&id_film=<?php echo $films['id_film']; ?>" class="btn btn-dark btn-medium d-flex align-items-center" tabindex="0"><?php echo $dates['date_date'];?> / <?php echo $dates['heure_date'];?> <i class="icon icon-arrow-io"></i>
                   </a>
                 </div>
                       <?php
@@ -177,7 +190,7 @@ $listeUserC = $films->afficherAboutfilm($id_film);
 
     <hr>
 
-
+   
 <hr>
 <footer id="footer">
   <div class="container">

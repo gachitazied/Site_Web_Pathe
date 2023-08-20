@@ -1,8 +1,18 @@
 <?php
 include '../controllers/dateC.php';
 $id_film = $_GET["id_film"];
-$datesC = new datesC();
-$listdateC = $datesC->joinfilm($id_film);
+$dates = new datesC();
+
+if(isset($_POST["typeDate"]))
+{
+if($_POST["typeDate"] == "triDate"){
+  $listDateC = $dates->affichertriDate();
+}
+else if($_POST["typeDate"] == "searchDate"){
+  $listDateC = $dates->afficherRechercheDate($_POST["searchDate"]);
+}
+}
+$listdateC = $dates->joinfilm($id_film);
 ?>
   <!DOCTYPE html>
 <html lang="en">
@@ -66,9 +76,22 @@ $listdateC = $datesC->joinfilm($id_film);
                    
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
             
-                    <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                   
             
                     <a href="TableUser.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Table user</a>
+
+
+                    <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="table.php" class="dropdown-item">Cinemas</a>
+                            <a href="table1.php" class="dropdown-item">Contacts</a>
+                            <a href="table2.php" class="dropdown-item">Reponses</a>
+                            <a href="table3.php" class="dropdown-item">Offres</a>
+                            <a href="table4.php" class="dropdown-item">Inscriptions</a>
+                            <a href="table5.php" class="dropdown-item">Reservation</a>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -174,6 +197,23 @@ $listdateC = $datesC->joinfilm($id_film);
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">films Table</h6>
                             <table class="table">
+
+                                                                                                                                                                         <!-- tri&recherche -->
+<form class="d-none d-md-flex ms-4" method="POST">
+    <input type="searchDate" name="searchDate" id="search" class="form-control bg-dark border-0" placeholder="Search Date">
+    <input type="hidden" name="typeDate" value="searchDate">
+</form>
+
+                <form class="d-none d-md-flex ms-4" action="" method="POST" >
+                    <button type="triDate" class="btn btn-primary m-2" value="triDate" name="typeDate" >trier</button>
+                </form>
+ <!-- tri&recherche -->
+
+
+ <form method="POST" action="generate_pdf7.php?id_film=<?php echo $id_film;?>">
+    <input type="hidden" name="type" value="pdf">
+    <button type="submit" class="btn btn-success m-2">Generate PDF</button>
+</form>
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID DATE</th>
@@ -205,7 +245,7 @@ $listdateC = $datesC->joinfilm($id_film);
                                 </tbody>
                             </table>
                            
-                            <a href="formdate.php?id_film=<?php echo $id_film; ?>" class="btn">ajouter date</a>
+                            <a href="formdate.php?id_film=<?php echo $id_film; ?>" class="btn btn-success m-2">ajouter date</a>
                         </div>
                     </div>
                   

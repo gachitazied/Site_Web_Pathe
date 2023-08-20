@@ -1,6 +1,6 @@
 <?php 
 include '../models/user.php';
-require_once "userC.php";
+require_once "../controllers/userC.php";
 
 
 

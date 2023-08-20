@@ -1,7 +1,7 @@
 <?php
 
         $email =$_GET["email"];
-        $reponse =$_GET["reponse"];
+       
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
@@ -31,8 +31,8 @@
     
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'ArabSoft Ciné ';
-        $mail->Body    = $reponse;
+        $mail->Subject = 'ArabSoft Ciné';
+        $mail->Body    = 'Votre réservation a été enregistrée avec succès. Veuillez consulter votre place au cinéma.';
        $mail->send();
             echo '';
             $prix=$_GET["prix"];

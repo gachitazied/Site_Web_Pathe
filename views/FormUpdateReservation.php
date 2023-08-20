@@ -1,8 +1,10 @@
+
 <?php
-include '../controllers/cinemaC.php';
-$cinemasC = new cinemasC();
-$id_cinema = $_GET["id_cinema"];
-$cinemas = $cinemasC->recuperercinema($id_cinema);
+include '../controllers/reservationC.php';
+$reservation = new reservationsC();
+$id_reservation = $_GET["id_reservation"];
+$reservations = $reservation->recupererreservation($id_reservation);
+
 ?>
  <!DOCTYPE html>
 <html lang="en">
@@ -65,10 +67,8 @@ $cinemas = $cinemasC->recuperercinema($id_cinema);
           
                    
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-        
             
                     <a href="TableUser.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Table user</a>
-
                     <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -185,24 +185,40 @@ $cinemas = $cinemasC->recuperercinema($id_cinema);
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">form cinema</h6>
-                            <form class="forum"  method="POST" action="UpdateCinema.php?id_cinema= <?php echo $id_cinema ?>"  >
-                            <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">image de cinema</label>
-                                    <input type="file" class="form-control"  name="img_cinema" value="<?php echo $cinemas['img_cinema']; ?>">
-                                    
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Nom de cinema</label>
-                                    <input type="text" class="form-control"  name="nom_cinema" value="<?php echo $cinemas['nom_cinema'];?>">
-                                    
+                            <h6 class="mb-4">form inscription</h6>
+                            <form class="forum"  method="POST" action="UpdateReservation.php?id_reservation= <?php echo $id_reservation ?>"  >
+
+                            <div class="mb-3">  
+                     
+                            <div class="mb-3">  
+                                    <label for="exampleInputPassword1" class="form-label">film </label>
+                                    <input type="text" class="form-control"  name="film_reservation" value="<?php echo $reservations['film_reservation'];?>" >
                                 </div>
                                 <div class="mb-3">  
-                                    <label for="exampleInputPassword1" class="form-label">lieu </label>
-                                    <input type="text" class="form-control"  name="lieu_cinema" value="<?php echo $cinemas['lieu_cinema'];?>" >
+                                    <label for="exampleInputPassword1" class="form-label">salle </label>
+                                    <input type="text" class="form-control"  name="salle_reservation" value="<?php echo $reservations['salle_reservation'];?>" >
                                 </div>
-            
-                                <button type="submit" class="btn btn-primary">Modifier</button>
+                                <div class="mb-3">  
+                                    <label for="exampleInputPassword1" class="form-label">date </label>
+                                    <input type="text" class="form-control"  name="date_reservation" value="<?php echo $reservations['date_reservation'];?>" >
+                                </div>
+                                <div class="mb-3">  
+                                    <label for="exampleInputPassword1" class="form-label">heure </label>
+                                    <input type="text" class="form-control"  name="heure_reservation" value="<?php echo $reservations['heure_reservation'];?>" >
+                                </div>
+                                <div class="mb-3">  
+                                    <label for="exampleInputPassword1" class="form-label">place </label>
+                                    <input type="text" class="form-control"  name="place_reservation" value="<?php echo $reservations['place_reservation'];?>" >
+                                </div>
+                                <div class="mb-3">  
+                                    <label for="exampleInputPassword1" class="form-label">email </label>
+                                    <input type="email" class="form-control"  name="email_reservation" value="<?php echo $reservations['email_reservation'];?>" >
+                                </div>
+                    
+               
+                      
+                            <button type="submit" class="btn btn-primary">envoir</button>
+                              
                             </form>
                         </div>
                     </div>

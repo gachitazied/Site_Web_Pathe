@@ -83,6 +83,33 @@ function joincontact($id_contact){
         die('Erreur:' . $e->getMessage());
     }
 }
+
+
+function affichertriReponse(){
+			
+    $sql="SELECT * FROM reponses ORDER BY email_reponse";
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
+function afficherRechercheReponse($rech){
+			
+    $sql = "SELECT * FROM reponses WHERE email_reponse LIKE '%$rech%' OR reponse_reponse LIKE '%$rech%'  ";
+
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
 }
 
 ?>

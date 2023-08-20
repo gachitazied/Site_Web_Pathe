@@ -169,34 +169,43 @@ public function setpassword( $password){
     $this->password=$password;
 }
 
-function login(){
+function login() {
     $base = config::getConnexion();
 
-    $requette = "SELECT * from users where email_user='$this->email_user' and password='$this->password'";
-
+    $query = "SELECT * FROM users WHERE email_user = ? LIMIT 1";
+    
     try {
-        $data = $base->query($requette );
-        if($data->rowCount() != 1){
-            header('location:../views/inscritClient.php');
-        }
-        else{
-            $user = $data->fetchObject();
-            
-                session_start();
-                $_SESSION['user'] = $user;
-                if($user->role == "client"){
-                    header('location:../views/ProjectModel.php');
-                }elseif($user->role == "admin"){
-                    header('location:../views/index.php');
-                }
-            
+        $stmt = $base->prepare($query);
+        $stmt->execute([$this->email_user]);
+
+        if ($stmt->rowCount() !== 1) {
+            header('Location: ../views/signin.php?error=invalid');
+            exit();
         }
 
-    } catch (Exception $e){
-        echo 'Erreur: '.$e->getMessage();
+        $user = $stmt->fetch(PDO::FETCH_OBJ);
+
+        if (password_verify($this->password, $user->password)) {
+            session_start();
+            $_SESSION['user'] = $user;
+
+            if ($user->role === "client") {
+                header('Location: ../views/index.php');
+                exit();
+            } elseif ($user->role === "admin") {
+                header('Location: ../views/table.php');
+                exit();
+            }
+        } else {
+            header('Location: ../views/signin.php?error=incorrect');
+            exit();
+        }
+    } catch (PDOException $e) {
+        echo 'Erreur: ' . $e->getMessage();
     }
-
 }
+
+
 
 
 }

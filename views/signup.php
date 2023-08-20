@@ -60,6 +60,7 @@ if(
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -100,7 +101,7 @@ if(
                             <label for="floatingText">Numéro telephone</label>
                         </div> 
                         <div class="form-floating mb-3">
-                        <select class="form-select" id="floatingRole" aria-label="Role" name=" register-role" >
+                        <select class="form-select" id="floatingRole" aria-label="Role" name="register-role" >
                                 <option value="client">Client</option>
                                 <option value="admin">Admin</option>
                             </select>
@@ -122,7 +123,7 @@ if(
                             <input type="password" class="form-control" id="floatingPassword" placeholder="Password"  name="register-password" >
                             <label for="floatingPassword">Password</label>
                         </div>
-
+                        <div class="g-recaptcha" data-sitekey="6LeGNzUjAAAAAPye1rqpJ2zACIyKXCT_xkMduHZR"></div> 
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
                         <p class="text-center mb-0">Already have an Account? <a href="signin.php">Sign In</a></p>
                         </form>

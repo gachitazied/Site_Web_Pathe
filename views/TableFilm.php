@@ -2,6 +2,17 @@
 include '../controllers/filmC.php';
 $id_cinema = $_GET["id_cinema"];
 $filmsC = new filmsC();
+
+if(isset($_POST["typeFilm"]))
+{
+if($_POST["typeFilm"] == "triFilm"){
+  $listfilmC = $filmsC->affichertriFilm();
+}
+else if($_POST["typeFilm"] == "searchFilm"){
+  $listfilmC = $filmsC->afficherRechercheFilm($_POST["searchFilm"]);
+}
+}
+else
 $listfilmC = $filmsC->joincinema($id_cinema);
 ?>
   <!DOCTYPE html>
@@ -66,9 +77,22 @@ $listfilmC = $filmsC->joincinema($id_cinema);
                    
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
             
-                    <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                   
             
                     <a href="TableUser.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Table user</a>
+
+
+                    <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="table.php" class="dropdown-item">Cinemas</a>
+                            <a href="table1.php" class="dropdown-item">Contacts</a>
+                            <a href="table2.php" class="dropdown-item">Reponses</a>
+                            <a href="table3.php" class="dropdown-item">Offres</a>
+                            <a href="table4.php" class="dropdown-item">Inscriptions</a>
+                            <a href="table5.php" class="dropdown-item">Reservation</a>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -175,6 +199,23 @@ $listfilmC = $filmsC->joincinema($id_cinema);
                         <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;">
                             <h6 class="mb-4">films Table</h6>
                             <table class="table" style="width: 1200px; height: 600px;">
+
+                                                                                                                                             <!-- tri&recherche -->
+<form class="d-none d-md-flex ms-4" method="POST">
+    <input type="searchFilm" name="searchFilm" id="search" class="form-control bg-dark border-0" placeholder="Search Film">
+    <input type="hidden" name="typeFilm" value="searchFilm">
+</form>
+
+                <form class="d-none d-md-flex ms-4" action="" method="POST" >
+                    <button type="triFilm" class="btn btn-primary m-2" value="triFilm" name="typeFilm" >trier</button>
+                </form>
+ <!-- tri&recherche -->
+
+
+ <form method="POST" action="generate_pdf6.php?id_cinema=<?php echo $id_cinema;?>">
+    <input type="hidden" name="type" value="pdf">
+    <button type="submit" class="btn btn-success m-2">Generate PDF</button>
+</form>
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID Film</th>
@@ -213,7 +254,7 @@ $listfilmC = $filmsC->joincinema($id_cinema);
                                 </tbody>
                             </table>
                            
-                            <a href="formfilm.php?id_cinema=<?php echo $id_cinema; ?>" class="btn">ajouter film</a>
+                            <a href="formfilm.php?id_cinema=<?php echo $id_cinema; ?>" class="btn btn-success m-2">ajouter film</a>
                         </div>
                     </div>
                   

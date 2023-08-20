@@ -1,10 +1,41 @@
 <?php
-include '../controllers/cinemaC.php';
-$cinemasC = new cinemasC();
-$id_cinema = $_GET["id_cinema"];
-$cinemas = $cinemasC->recuperercinema($id_cinema);
+
+
+include '../controllers/inscriC.php';
+
+require_once '../controllers/session.php';
+
+
+
+
+
+
+$inscris = new inscrisC();
+if(isset($_POST["typeInscri"]))
+{
+if($_POST["typeInscri"] == "triInscri"){
+  $listeInscriC = $inscris->affichertriInscri();
+}
+else if($_POST["typeInscri"] == "searchInscri"){
+  $listeInscriC = $inscris->afficherRechercheInscri($_POST["searchInscri"]);
+}
+}
+else
+$listeInscriC = $inscris->afficherinscri();
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -48,7 +79,7 @@ $cinemas = $cinemasC->recuperercinema($id_cinema);
         <!-- Spinner End -->
 
 
-               <!-- Sidebar Start -->
+               <!-- Sidebar Start -->   
                <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.php" class="navbar-brand mx-4 mb-3">
@@ -56,7 +87,7 @@ $cinemas = $cinemasC->recuperercinema($id_cinema);
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle" src="images/logo3.png" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
        
@@ -65,9 +96,10 @@ $cinemas = $cinemasC->recuperercinema($id_cinema);
           
                    
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-        
+            
             
                     <a href="TableUser.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Table user</a>
+                   
 
                     <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Tables</a>
@@ -83,15 +115,14 @@ $cinemas = $cinemasC->recuperercinema($id_cinema);
                 </div>
             </nav>
         </div>
-        <!-- Sidebar End -->
-
+        <!-- Sidebar End -->                                
 
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <a href="index.php" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -180,36 +211,78 @@ $cinemas = $cinemasC->recuperercinema($id_cinema);
             <!-- Navbar End -->
 
 
-            <!-- Form Start -->
-            <div class="container-fluid pt-4 px-4">
+
+
+
+                        <!-- Table Start -->
+                        <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">form cinema</h6>
-                            <form class="forum"  method="POST" action="UpdateCinema.php?id_cinema= <?php echo $id_cinema ?>"  >
-                            <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">image de cinema</label>
-                                    <input type="file" class="form-control"  name="img_cinema" value="<?php echo $cinemas['img_cinema']; ?>">
+                        <div class="bg-secondary rounded h-100 p-4" style="width: 1200px; height: 600px;" >
+                            <h6 class="mb-4">table inscription d'offre</h6>
+                            <table class="table"  style="width: 1200px; height: 600px;"  >
+
+                                                                                     <!-- tri&recherche -->
+<form class="d-none d-md-flex ms-4" method="POST">
+    <input type="searchInscri" name="searchInscri" id="search" class="form-control bg-dark border-0" placeholder="Search Inscri">
+    <input type="hidden" name="typeInscri" value="searchInscri">
+</form>
+
+                <form class="d-none d-md-flex ms-4" action="" method="POST" >
+                    <button type="triInscri" class="btn btn-primary m-2" value="triInscri" name="typeInscri" >trier</button>
+                </form>
+ <!-- tri&recherche -->
+
+
+ <form method="POST" action="generate_pdf4.php">
+    <input type="hidden" name="type" value="pdf">
+    <button type="submit" class="btn btn-success m-2">Generate PDF</button>
+</form>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> ID insciption</th>
+                                        <th scope="col">nom incription</th>
+                                        <th scope="col">prenom inscription</th>
+                                        <th scope="col">email inscription</th>
+                                        <th scope="col"> telephone inscription</th>
+                                        <th scope="col"> nombre inscription</th>
+                                        <th scope="col">message inscription</th>
+                                        <th scope="col">nom de offre</th>
+                                        <th scope="col">numero de offre</th>
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                         foreach ($listeInscriC as $inscris) {
+                          ?>
+                                    <tr>
+                                       
+                                        <td><?php echo $inscris['id_inscri'];?> </td>
+                                        <td><?php echo $inscris['nom_inscri'];?></td>
+                                        <td><?php echo $inscris['prenom_inscri'];?></td>
+                                        <td><?php echo $inscris['email_inscri'];?></td>
+                                        <td><?php echo $inscris['telephone_inscri'];?></td>
+                                        <td><?php echo $inscris['nombre_inscri'];?></td>
+                                        <td><?php echo $inscris['message_inscri'];?></td>
+                                        <td><?php echo $inscris['nom_offre'];?></td>
+                                        <td><?php echo $inscris['id_offre'];?></td>
+                                       <td> <a href="DeleteInscri.php?id_inscri=<?php echo $inscris['id_inscri']; ?>" class="btn">Delete</a></td>
+                                       <td> <a href="FormUpdateInscri.php?id_inscri=<?php echo $inscris['id_inscri']; ?>" class="btn">modifier</a></td>
+                                  
+                                    </tr>
                                     
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Nom de cinema</label>
-                                    <input type="text" class="form-control"  name="nom_cinema" value="<?php echo $cinemas['nom_cinema'];?>">
-                                    
-                                </div>
-                                <div class="mb-3">  
-                                    <label for="exampleInputPassword1" class="form-label">lieu </label>
-                                    <input type="text" class="form-control"  name="lieu_cinema" value="<?php echo $cinemas['lieu_cinema'];?>" >
-                                </div>
-            
-                                <button type="submit" class="btn btn-primary">Modifier</button>
-                            </form>
+                            <?php
+                            }
+                            ?>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                    
+                     </div>
                 </div>
             </div>
-            <!-- Form End -->
+            
+            <!-- Table End -->
 
 
 
@@ -236,4 +309,4 @@ $cinemas = $cinemasC->recuperercinema($id_cinema);
     <script src="js/main.js"></script>
 </body>
 
-</php>
+</html>

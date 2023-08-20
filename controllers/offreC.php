@@ -91,5 +91,30 @@ return $cinemas;
 }
 
 
+function affichertriOffre(){
+			
+    $sql="SELECT * FROM offres ORDER BY nom_offre";
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
+function afficherRechercheOffre($rech){
+			
+    $sql = "SELECT * FROM offres WHERE nom_offre LIKE '%$rech%'  ";
+
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
 }
 ?>

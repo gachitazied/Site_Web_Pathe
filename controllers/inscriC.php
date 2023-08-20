@@ -81,7 +81,31 @@ return $paniers;
 }catch (Exception $e){
     $e->getMessage();}
 }
+function affichertriInscri(){
+			
+    $sql="SELECT * FROM inscris ORDER BY nom_inscri";
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
+function afficherRechercheInscri($rech){
+			
+    $sql = "SELECT * FROM inscris WHERE nom_inscri LIKE '%$rech%' OR prenom_inscri LIKE '%$rech%' OR email_inscri LIKE '%$rech%'OR nom_offre LIKE '%$rech%'OR telephone_inscri LIKE '%$rech%'  ";
 
+    $db = config::getConnexion();
+    try{
+        $cinemas = $db->query($sql);
+        return $cinemas;
+    }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }	
+}
 
 }
 

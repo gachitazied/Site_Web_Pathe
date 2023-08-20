@@ -46,6 +46,19 @@
         }
 
 
+
+        function recupererDate1($id_date){
+            $sql="SELECT * from dates where id_date=$id_date";
+            $db = config::getConnexion();
+        try{
+            $query = $db->prepare($sql);
+        $query->execute();
+        $cinemas=$query->fetch();
+        return $cinemas;
+        }catch (Exception $e){
+            $e->getMessage();}
+        }
+
         function modifierdate($id_date,$dates){
             try{
             $db = config::getConnexion();
@@ -92,6 +105,32 @@
         catch(Exception $e){
             die('Erreur:' . $e->getMessage());
         }
+    }
+
+    function affichertriDate(){
+			
+        $sql="SELECT * FROM dates ORDER BY heure_date";
+        $db = config::getConnexion();
+        try{
+            $cinemas = $db->query($sql);
+            return $cinemas;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+    }
+    function afficherRechercheDate($rech){
+                
+        $sql = "SELECT * FROM dates WHERE heure_date LIKE '%$rech%' OR date_date LIKE '%$rech%'  ";
+    
+        $db = config::getConnexion();
+        try{
+            $cinemas = $db->query($sql);
+            return $cinemas;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
     }
     }
     ?>
