@@ -83,49 +83,56 @@ if(
                             <a href="index.html" class="">
                                 <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>ArabSoft Ciné</h3>
                             </a>
-                            <h3>Sign Up</h3>
+                          
                         </div>
                         <form action="" id="myForm" method="post">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="register-nom_user">
+                            <input type="text" class="form-control" id="nom" placeholder="jhondoe" name="register-nom_user">
                             <label for="floatingText">Nom </label>
+                            <span id="errornom"></span>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="bguir"  name="register-prenom_user">
+                            <input type="text" class="form-control" id="prenom" placeholder="bguir"  name="register-prenom_user">
                             <label for="floatingText">Prenom</label>
+                            <span id="errorprenom"></span>
                         </div>  
 
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="+216 95 564 546"  name="register-num_tel">
+                            <input type="text" class="form-control" id="num" placeholder="+216 95 564 546"  name="register-num_tel">
                             <label for="floatingText">Numéro telephone</label>
+                            <span id="errornumero"></span>
                         </div> 
                         <div class="form-floating mb-3">
-                        <select class="form-select" id="floatingRole" aria-label="Role" name="register-role" >
+                        <select class="form-select" id="role" aria-label="Role" name="register-role" >
                                 <option value="client">Client</option>
                                 <option value="admin">Admin</option>
                             </select>
                             <label for="floatingText">Role</label>
+                            <span id="errorrole"></span>
                         </div> 
  
 
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="Rue Raoued"  name=" register-adresse_user">
+                            <input type="text" class="form-control" id="adresse" placeholder="Rue Raoued"  name=" register-adresse_user">
                             <label for="floatingText">Adresse</label>
+                            <span id="erroradresse"></span>
                         </div>  
 
 
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"  name="register-email_user" >
+                            <input type="email" class="form-control" id="mail" placeholder="name@example.com"  name="register-email_user" >
                             <label for="floatingInput">Email address</label>
+                            <span id="erroremail"></span>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"  name="register-password" >
+                            <input type="password" class="form-control" id="mdp" placeholder="Password"  name="register-password" >
                             <label for="floatingPassword">Password</label>
+                            <span id="error"></span>
                         </div>
                         <div class="g-recaptcha" data-sitekey="6LeGNzUjAAAAAPye1rqpJ2zACIyKXCT_xkMduHZR"></div> 
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
-                        <p class="text-center mb-0">Already have an Account? <a href="signin.php">Sign In</a></p>
+                        <p class="text-center mb-0">Pas encore inscrit ?<a href="signin.php">S'inscrire</a></p>
                         </form>
                     </div>
                 </div>
@@ -133,6 +140,66 @@ if(
         </div>
         <!-- Sign Up End -->
     </div>
+
+
+
+    <script>
+   let myForm = document.getElementById('myForm');
+
+myForm.addEventListener('submit', function(e) {
+  let mynom = document.getElementById('nom');
+  let myprenom = document.getElementById('prenom');
+  let mynum = document.getElementById('num');
+  let myrole = document.getElementById('role');
+  let myadresse = document.getElementById('adresse');
+  let mymail = document.getElementById('mail');
+  let mymdp = document.getElementById('mdp');
+
+
+  if (mynom.value == '') {
+    let error = document.getElementById('errornom');
+    error.innerHTML = "Le champs est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+  if (myprenom.value == '') {
+    let error = document.getElementById('errorprenom');
+    error.innerHTML = "Le champs est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+  if (mynum.value == '') {
+    let error = document.getElementById('errornumero');
+    error.innerHTML = "Le champs est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+  if (myrole.value == '') {
+    let error = document.getElementById('errorrole');
+    error.innerHTML = "Le champs  est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+  if (myadresse.value == '') {
+    let error = document.getElementById('erroradresse');
+    error.innerHTML = "Le champs  est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+  if (mymail.value == '') {
+    let error = document.getElementById('erroremail');
+    error.innerHTML = "Le champs est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+  if (mymdp.value == '') {
+    let error = document.getElementById('error');
+    error.innerHTML = "Le champs est requis";
+    error.style.color = 'red';
+    e.preventDefault();
+  }
+})
+              </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

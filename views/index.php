@@ -1,4 +1,6 @@
 <?php
+
+
 include '../controllers/filmC.php';
 $films = new filmsC();
 $listfilmC = $films->afficherfilm();
@@ -45,7 +47,7 @@ $listfilmC = $films->afficherfilm();
               <div class="col-md-4 col-sm-12 user-items">
                 <ul class="d-flex justify-content-end list-unstyled">
                   <li>
-                    <a href="login.php">
+                    <a href="signinFront.php">
                       <i class="icon icon-user"></i>
                     </a>
                   </li>

@@ -35,7 +35,6 @@ ini_set('display_errors', 1);
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
- 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
@@ -59,22 +58,27 @@ ini_set('display_errors', 1);
                             <a href="#" class="">
                                 <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>ArabSoft Ciné</h3>
                             </a>
-                            <h3>Sign In</h3>
+                        
                         </div>
-                        <form method="post" action="../controllers/userController.php">
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
-        <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating mb-4">
-        <input type="password" class="form-control" placeholder="Password" id="pass" name="password" data-type="password">
-        <label for="floatingPassword">Password</label>
-    </div>
- 
-
-<button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="event" value="login">Sign In</button> 
-</form>
-
+                        <?php
+    if (isset($_GET['error']) && $_GET['error'] === 'incorrect') {
+        echo '<p style="color: red;">Identifiants incorrects. Veuillez réessayer.</p>';
+    }
+    ?>
+    
+    <form method="post" action="login.php">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+            <label for="floatingInput">Adresse e-mail</label>
+        </div>
+        <div class="form-floating mb-4">
+            <input type="password" class="form-control" placeholder="Password" id="pass" name="password" data-type="password">
+            <label for="floatingPassword">Mot de passe</label>
+        </div>
+        <div class="g-recaptcha" data-sitekey="6LeGNzUjAAAAAPye1rqpJ2zACIyKXCT_xkMduHZR"></div> 
+        <button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="event" value="login">Se connecter</button>
+        <p class="text-center mb-0">Vous n'avez pas de compte? <a href="signup.php">Inscrivez-vous</a></p>
+    </form>
                     </div>
                 </div>
             </div>

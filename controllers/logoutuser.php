@@ -1,6 +1,8 @@
 <?php 
 session_start();
-        session_unset();
-        session_destroy();
-header('location: ../Views/ProjectModel.php');
+session_unset();
+session_destroy();
+header('location: ../views/signin.php');
+exit();
 ?>
+
